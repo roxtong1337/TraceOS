@@ -1,134 +1,95 @@
-/* ============================================================
-   TraceOS — interaksi halaman
-   ============================================================ */
 (function () {
-  'use strict';
+  "use strict";
 
-  /* ---------- tahun footer ---------- */
-  var year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- navbar: shadow saat scroll ---------- */
-  var nav = document.getElementById('nav');
-  var onScroll = function () {
-    if (!nav) return;
-    nav.classList.toggle('is-scrolled', window.scrollY > 12);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* ---------- menu mobile ---------- */
-  var toggle = document.getElementById('navToggle');
-  var links = document.getElementById('navLinks');
-  if (toggle && links) {
-    toggle.addEventListener('click', function () {
-      var open = links.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  /* ---------- menu seluler (kali: nav.show-menu) ---------- */
+  var nav = document.querySelector("header nav");
+  var menuButton = nav && nav.querySelector("button");
+  if (nav && menuButton) {
+    menuButton.addEventListener("click", function () {
+      nav.classList.toggle("show-menu");
     });
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        links.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("#navigation a")) nav.classList.remove("show-menu");
     });
   }
 
-  /* ---------- reveal on scroll ---------- */
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealTargets = document.querySelectorAll(
-    '.section__head, .card, .tool, .member, .dl-card, .about__col, .stat, .notice'
-  );
-  revealTargets.forEach(function (el) { el.classList.add('reveal'); });
+  /* ---------- tahun berjalan ---------- */
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-  if (reduce || !('IntersectionObserver' in window)) {
-    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
-  } else {
+  /* ---------- animasi reveal saat di-scroll ---------- */
+  var revealTargets = document.querySelectorAll(
+    "#traceos-highlights li, #carousel a, .team-card, .download-card, #spec-wrap > *, #traceos-everywhere > div > div, #desktops-preview > div"
+  );
+  revealTargets.forEach(function (el, i) {
+    el.classList.add("reveal");
+    el.style.transitionDelay = Math.min(i % 8, 5) * 60 + "ms";
+  });
+
+  if ("IntersectionObserver" in window && !prefersReduced) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el = entry.target;
-        var siblings = Array.prototype.slice.call(el.parentElement.children);
-        el.style.transitionDelay = (siblings.indexOf(el) % 4) * 70 + 'ms';
-        el.classList.add('is-visible');
-        io.unobserve(el);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealTargets.forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---------- animasi angka statistik ---------- */
-  var counters = document.querySelectorAll('.stat__num');
-  var runCounter = function (el) {
-    var target = parseFloat(el.dataset.count || '0');
-    var suffix = el.dataset.suffix || '';
-    var dur = 1300, start = null;
-
-    var step = function (ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(eased * target) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    counters.forEach(function (el) {
-      el.textContent = (el.dataset.count || '0') + (el.dataset.suffix || '');
-    });
-  } else {
-    var co = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        runCounter(entry.target);
-        co.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (el) { co.observe(el); });
-  }
-
-  /* ---------- efek "mengetik" pada terminal hero ---------- */
-  var cmds = document.querySelectorAll('#typeLines .cmd');
-  if (cmds.length && !reduce) {
-    cmds.forEach(function (el) {
-      el.dataset.full = el.dataset.text || el.textContent;
-      el.textContent = '';
-    });
-
-    var typeOne = function (el, done) {
-      var full = el.dataset.full;
-      var i = 0;
-      (function tick() {
-        el.textContent = full.slice(0, ++i);
-        if (i < full.length) {
-          setTimeout(tick, 42 + Math.random() * 45);
-        } else {
-          setTimeout(done, 260);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
         }
-      })();
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------- video: berputar saat masuk viewport ---------- */
+  var video = document.getElementById("demo-video");
+  var frame = document.getElementById("video-frame");
+  var vbutton = document.getElementById("video-toggle");
+
+  if (video && frame) {
+    var play = function () {
+      var p = video.play();
+      if (p && typeof p.then === "function") {
+        p.then(function () { frame.classList.add("playing"); }).catch(function () {});
+      } else {
+        frame.classList.add("playing");
+      }
+    };
+    var pause = function () {
+      video.pause();
+      frame.classList.remove("playing");
     };
 
-    var runQueue = function (idx) {
-      if (idx >= cmds.length) return;
-      typeOne(cmds[idx], function () { runQueue(idx + 1); });
-    };
+    video.addEventListener("play", function () { frame.classList.add("playing"); });
+    video.addEventListener("pause", function () { frame.classList.remove("playing"); });
 
-    var started = false;
-    var startTyping = function () {
-      if (started) return;
-      started = true;
-      setTimeout(function () { runQueue(0); }, 500);
+    var togglePlay = function () {
+      if (video.paused) { video.controls = true; play(); } else { pause(); }
     };
+    if (vbutton) vbutton.addEventListener("click", togglePlay);
+    frame.addEventListener("click", function (e) { if (e.target === video) togglePlay(); });
 
-    if ('IntersectionObserver' in window) {
-      var to = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) { startTyping(); to.disconnect(); }
-      }, { threshold: 0.3 });
-      to.observe(document.getElementById('typeLines'));
-    } else {
-      startTyping();
+    if ("IntersectionObserver" in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { if (!prefersReduced) play(); }
+          else { pause(); }
+        });
+      }, { threshold: 0.55 });
+      vio.observe(frame);
     }
+  }
+
+  /* ---------- carousel tools: geser otomatis bila meluber ---------- */
+  var carousel = document.getElementById("carousel");
+  if (carousel && !prefersReduced) {
+    var inner = carousel.firstElementChild;
+    var pos = 0;
+    setInterval(function () {
+      if (inner.scrollWidth <= carousel.clientWidth) return;
+      pos = pos ? 0 : inner.scrollWidth - carousel.clientWidth;
+      carousel.scrollTo({ left: pos, behavior: "smooth" });
+    }, 4200);
   }
 })();
