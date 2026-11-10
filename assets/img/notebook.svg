@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640">
+  <defs>
+    <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1a12"/><stop offset="1" stop-color="#050b08"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="30" width="860" height="520" rx="16" fill="#0d1512" stroke="#1d2b23" stroke-width="2"/>
+  <rect x="86" y="46" width="828" height="488" rx="8" fill="url(#scr)"/>
+  <!-- panel atas -->
+  <rect x="86" y="46" width="828" height="30" rx="8" fill="#10201a"/>
+  <circle cx="106" cy="61" r="5" fill="#00c46f"/><circle cx="124" cy="61" r="5" fill="#0f8a52"/><circle cx="142" cy="61" r="5" fill="#0a5c38"/>
+  <text x="500" y="66" font-family="monospace" font-size="14" fill="#7dffc4" text-anchor="middle">TraceOS — Terminal</text>
+  <!-- jendela terminal -->
+  <rect x="110" y="96" width="540" height="330" rx="6" fill="#081310" stroke="#173325"/>
+  <g font-family="monospace" font-size="15" fill="#bdbdbd">
+    <text x="128" y="126" fill="#7dffc4">traceos@forensic:~$ whoami</text>
+    <text x="128" y="150">digital forensic analyst</text>
+    <text x="128" y="180" fill="#7dffc4">traceos@forensic:~$ autopsy --open case.e01</text>
+    <text x="128" y="204" fill="#00ff9c">[ OK ] disk image loaded</text>
+    <text x="128" y="228" fill="#00ff9c">[ OK ] filesystem: NTFS</text>
+    <text x="128" y="258" fill="#7dffc4">traceos@forensic:~$ foremost -i image.dd</text>
+    <text x="128" y="282" fill="#00ff9c">[ OK ] 2,481 files recovered</text>
+    <text x="128" y="312" fill="#7dffc4">traceos@forensic:~$ _</text>
+  </g>
+  <!-- jendela evidence -->
+  <rect x="670" y="96" width="230" height="150" rx="6" fill="#081310" stroke="#173325"/>
+  <text x="688" y="122" font-family="monospace" font-size="14" fill="#7dffc4">Evidence</text>
+  <g font-family="monospace" font-size="12" fill="#9be7c4">
+    <text x="688" y="146">case.e01   2.0 GB</text>
+    <text x="688" y="166">image.dd   1.4 GB</text>
+    <text x="688" y="186">case.pcap  84 MB</text>
+    <text x="688" y="206">firmware.bin 6 MB</text>
+    <text x="688" y="226" fill="#ffd166">3 item flagged</text>
+  </g>
+  <!-- dock bawah -->
+  <rect x="86" y="500" width="828" height="34" rx="6" fill="#0f1f16"/>
+  <g fill="#00c46f">
+    <rect x="110" y="508" width="18" height="18" rx="4"/><rect x="140" y="508" width="18" height="18" rx="4" opacity="0.7"/>
+    <rect x="170" y="508" width="18" height="18" rx="4" opacity="0.7"/><rect x="200" y="508" width="18" height="18" rx="4" opacity="0.7"/>
+  </g>
+  <!-- keyboard base -->
+  <rect x="30" y="550" width="940" height="26" rx="12" fill="#131c18"/>
+  <rect x="410" y="576" width="180" height="10" rx="5" fill="#131c18"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b1a12"/><stop offset="1" stop-color="#040a07"/></linearGradient></defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="44" fill="#0f1f16"/>
+  <text x="20" y="28" font-family="monospace" font-size="15" fill="#7dffc4">TraceOS — Layout Investigator</text>
+  <g font-family="monospace" font-size="13" fill="#0a1410">
+    <rect x="690" y="10" width="90" height="24" rx="4" fill="#00c46f"/>
+    <text x="700" y="27" fill="#04110a">traceos 12:30</text>
+  </g>
+  <rect x="0" y="44" width="800" height="40" fill="#0c1913"/>
+  <g font-family="monospace" font-size="13" fill="#9be7c4">
+    <text x="20" y="69">Applications</text><text x="140" y="69">Forensics</text><text x="230" y="69">Terminal</text><text x="310" y="69">Files</text>
+  </g>
+  <rect x="0" y="84" width="200" height="660" fill="#0a1410"/><g font-family="monospace" font-size="13" fill="#9be7c4"><text x="20" y="120">▸ Autopsy</text><text x="20" y="150">▸ Sleuth Kit</text><text x="20" y="180">▸ Wireshark</text><text x="20" y="210">▸ TestDisk</text><text x="20" y="240">▸ PhotoRec</text><text x="20" y="270">▸ Foremost</text><text x="20" y="300">▸ ExifTool</text><text x="20" y="330">▸ Binwalk</text><text x="20" y="380" fill="#7dffc4">CASES</text><text x="20" y="410">case-2025-014</text><text x="20" y="440" fill="#ffd166">case-2025-021</text><text x="20" y="470">case-2025-030</text></g><rect x="220" y="104" width="550" height="270" rx="8" fill="#081310" stroke="#173325"/><text x="240" y="134" font-family="monospace" font-size="15" fill="#7dffc4">Network Forensics — Wireshark</text><g fill="#00c46f" opacity="0.85"><rect x="250" y="170" width="14" height="60"/><rect x="272" y="200" width="14" height="120"/><rect x="294" y="160" width="14" height="150"/><rect x="316" y="220" width="14" height="90"/><rect x="338" y="180" width="14" height="130"/><rect x="360" y="240" width="14" height="70"/><rect x="382" y="150" width="14" height="170"/><rect x="404" y="210" width="14" height="100"/><rect x="426" y="190" width="14" height="120"/><rect x="448" y="230" width="14" height="80"/></g><rect x="220" y="394" width="550" height="300" rx="8" fill="#081310" stroke="#173325"/><text x="240" y="424" font-family="monospace" font-size="15" fill="#7dffc4">Extracted Metadata</text><g font-family="monospace" font-size="13" fill="#bdbdbd"><text x="240" y="456">File        : evidence-01.jpg</text><text x="240" y="480">Camera      : SAMSUNG SM-A125F</text><text x="240" y="504">Date        : 2025:03:14 09:21:07</text><text x="240" y="528">GPS         : -7.0502, 110.4381</text><text x="240" y="552" fill="#00ff9c">SHA-256     : 9f2c…a71b</text></g>
+  <rect x="0" y="744" width="800" height="56" fill="#0f1f16"/>
+  <g fill="#7dffc4">
+    <rect x="20" y="758" width="28" height="28" rx="6"/><rect x="58" y="758" width="28" height="28" rx="6" opacity="0.75"/>
+    <rect x="96" y="758" width="28" height="28" rx="6" opacity="0.75"/><rect x="134" y="758" width="28" height="28" rx="6" opacity="0.75"/>
+    <rect x="172" y="758" width="28" height="28" rx="6" opacity="0.75"/>
+  </g>
+  <g font-family="monospace" font-size="12" fill="#9be7c4"><text x="640" y="777">CPU 12%   MEM 34%   24.04 LTS</text></g>
+</svg>
