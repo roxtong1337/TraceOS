@@ -3,19 +3,15 @@
 
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- menu seluler ---------- */
-  var toggle = document.getElementById("menu-toggle");
-  var nav = document.getElementById("navigation");
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
+  /* ---------- menu seluler (kali: nav.show-menu) ---------- */
+  var nav = document.querySelector("header nav");
+  var menuButton = nav && nav.querySelector("button");
+  if (nav && menuButton) {
+    menuButton.addEventListener("click", function () {
+      nav.classList.toggle("show-menu");
     });
     nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
+      if (e.target.closest("#navigation a")) nav.classList.remove("show-menu");
     });
   }
 
@@ -23,7 +19,7 @@
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  /* ---------- reveal saat di-scroll ---------- */
+  /* ---------- animasi reveal saat di-scroll ---------- */
   var revealTargets = document.querySelectorAll(
     "#traceos-highlights li, #carousel a, .team-card, .download-card, #spec-wrap > *, #traceos-everywhere > div > div, #desktops-preview > div"
   );
@@ -46,7 +42,7 @@
     revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------- video: putar otomatis saat masuk viewport ---------- */
+  /* ---------- video: berputar saat masuk viewport ---------- */
   var video = document.getElementById("demo-video");
   var frame = document.getElementById("video-frame");
   var vbutton = document.getElementById("video-toggle");
@@ -68,40 +64,32 @@
     video.addEventListener("play", function () { frame.classList.add("playing"); });
     video.addEventListener("pause", function () { frame.classList.remove("playing"); });
 
-    if (vbutton) {
-      vbutton.addEventListener("click", function () {
-        if (video.paused) { video.controls = true; play(); } else { pause(); }
-      });
-    }
-    frame.addEventListener("click", function (e) {
-      if (e.target === video) {
-        if (video.paused) { video.controls = true; play(); } else { pause(); }
-      }
-    });
+    var togglePlay = function () {
+      if (video.paused) { video.controls = true; play(); } else { pause(); }
+    };
+    if (vbutton) vbutton.addEventListener("click", togglePlay);
+    frame.addEventListener("click", function (e) { if (e.target === video) togglePlay(); });
 
     if ("IntersectionObserver" in window) {
       var vio = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            if (!prefersReduced) play();
-          } else {
-            pause();
-          }
+          if (entry.isIntersecting) { if (!prefersReduced) play(); }
+          else { pause(); }
         });
       }, { threshold: 0.55 });
       vio.observe(frame);
     }
   }
 
-  /* ---------- carousel tools: geser otomatis saat banyak ---------- */
+  /* ---------- carousel tools: geser otomatis bila meluber ---------- */
   var carousel = document.getElementById("carousel");
   if (carousel && !prefersReduced) {
     var inner = carousel.firstElementChild;
-    var shift = 0;
+    var pos = 0;
     setInterval(function () {
       if (inner.scrollWidth <= carousel.clientWidth) return;
-      shift = (shift + 1) % 2;
-      carousel.scrollTo({ left: shift * (inner.scrollWidth - carousel.clientWidth), behavior: "smooth" });
+      pos = pos ? 0 : inner.scrollWidth - carousel.clientWidth;
+      carousel.scrollTo({ left: pos, behavior: "smooth" });
     }, 4200);
   }
 })();

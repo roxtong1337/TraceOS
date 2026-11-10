@@ -3,10 +3,12 @@
 Website profil untuk **TraceOS**, distro Linux berbasis **Xubuntu 24.04 LTS** yang dikemas
 khusus untuk **digital forensics** (jejak digital).
 
-Situs ini statis (HTML/CSS/JS) tanpa build step. Tata letaknya mengikuti pola
-[halaman depan kali.org](https://www.kali.org/): banner penuh layar, sorotan fitur,
-carousel tools, bagian "Everywhere", pratinjau desktop, dan kartu blog — dengan
-palet **cyber-green** dan logo **ASCII art**.
+Situs ini statis (HTML/CSS/JS) tanpa build step. Tata letak dan CSS mengikuti
+[halaman depan kali.org](https://www.kali.org/) hampir baris per baris (banner penuh
+layar, sorotan fitur, carousel tools, bagian "Everywhere" ber-neon, pratinjau desktop,
+kartu) — dengan dua perbedaan: **warna** (biru/ungu kali → palet cyber-green) dan
+**gambar** (logo ASCII art TraceOS + aset sendiri). Beberapa fitur tambahan: video yang
+berputar saat di-scroll, animasi reveal, dan efek neon pada logo.
 
 ## Struktur
 

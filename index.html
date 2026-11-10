@@ -5,57 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TraceOS | Distro Linux untuk Digital Forensics</title>
 <meta name="description" content="TraceOS adalah distro Linux berbasis Xubuntu 24.04 LTS untuk digital forensics — analisis barang bukti digital, pemulihan data, dan investigasi jaringan dalam satu sistem operasi.">
-<meta name="theme-color" content="#050b08">
+<meta name="theme-color" content="#0f8a52">
 <meta property="og:title" content="TraceOS | Distro Linux untuk Digital Forensics">
 <meta property="og:description" content="Melacak jejak digital dalam satu sistem operasi.">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- ============ HEADER / BANNER (pola kali.org) ============ -->
+<!-- ===================== HEADER / BANNER ===================== -->
 <header class="bg-cover">
   <nav class="container">
-    <a id="logo" href="#top" aria-label="TraceOS">
-      <img src="assets/img/logo.svg" alt="" width="42" height="42">
-      <span>TraceOS</span>
-    </a>
+    <a id="logo" href="#top"><img src="assets/img/logo.svg" alt="TraceOS"><span>TraceOS</span></a>
     <ul id="navigation">
-      <li><a href="#traceos-highlights">Fitur</a></li>
-      <li><a href="#traceos-tools">Tools</a></li>
-      <li class="dropdown-menu"><span>Distro <i class="chev"></i></span>
+      <li><a href="#unduh">Get TraceOS</a></li>
+      <li><a href="#tools">Blog</a></li>
+      <li class="dropdown-menu"><span>Documentation <i class="ti-angle-down"></i></span>
         <div>
-          <a href="#distro">Tentang TraceOS</a>
+          <a href="#video">Documentation Pages</a>
+          <a href="#tools">Tools Documentation</a>
+          <a href="#faq">Frequently Asked Questions</a>
+        </div>
+      </li>
+      <li class="dropdown-menu"><span>Community <i class="ti-angle-down"></i></span>
+        <div>
+          <a href="#tim">Community Support</a>
+          <a href="#tim">Forums</a>
+          <a href="#tim">Join Newsletter</a>
+          <a href="#tim">Get Involved</a>
+        </div>
+      </li>
+      <li class="dropdown-menu"><span>About <i class="ti-angle-down"></i></span>
+        <div>
+          <a href="#distro">TraceOS Overview</a>
           <a href="#spesifikasi">Spesifikasi</a>
-          <a href="#tim">Tim Remastering</a>
+          <a href="#desktops-preview">Desktop</a>
+          <a href="#tim">Meet The TraceOS Team</a>
+          <a href="#faq">Contact Us</a>
         </div>
       </li>
-      <li class="dropdown-menu"><span>Dokumentasi <i class="chev"></i></span>
-        <div>
-          <a href="#traceos-tools">Panduan Tools</a>
-          <a href="#video">Video Demo</a>
-          <a href="#faq">FAQ</a>
-        </div>
-      </li>
-      <li><a href="#unduh">Unduh</a></li>
     </ul>
-    <a id="nav-cta" class="btn" href="#unduh">Get TraceOS</a>
-    <button id="menu-toggle" title="Tampilkan menu" aria-label="Tampilkan menu" aria-expanded="false"><div></div><div></div><div></div></button>
+    <button title="show menu" aria-label="Tampilkan menu"><div></div><div></div><div></div></button>
   </nav>
 
   <div id="banner">
     <div id="banner-logo">
-      <pre aria-label="TraceOS ASCII logo" class="ascii-logo">
- █████████╗██████╗  █████╗  ██████╗███████╗ ██████╗ ███████╗
- ╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔════╝
-    ██║   ██████╔╝███████║██║     █████╗  ██║   ██║███████╗
-    ██║   ██╔══██╗██╔══██║██║     ██╔══╝  ██║   ██║╚════██║
-    ██║   ██║  ██║██║  ██║╚██████╗███████╗╚██████╔╝███████║
-    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝ ╚══════╝</pre>
+      <pre class="ascii-logo" aria-label="TraceOS">████████╗██████╗  █████╗  ██████╗███████╗ ██████╗ ███████╗
+╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔════╝
+   ██║   ██████╔╝███████║██║     █████╗  ██║   ██║███████╗
+   ██║   ██╔══██╗██╔══██║██║     ██╔══╝  ██║   ██║╚════██║
+   ██║   ██║  ██║██║  ██║╚██████╗███████╗╚██████╔╝███████║
+   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝ ╚══════╝
+                                                          </pre>
     </div>
     <div id="banner-text">
       <div>
@@ -64,109 +70,109 @@
       </div>
       <div>
         <h1>Distro Linux untuk<br>Investigasi Forensik Digital</h1>
-        <p><strong>TraceOS</strong> — dari kata <em>trace</em>, jejak — adalah distro Linux berbasis Xubuntu 24.04 LTS untuk digital forensics. Menganalisis barang bukti digital, memulihkan data yang terhapus, dan menginvestigasi aktivitas jaringan, semua dalam satu lingkungan kerja yang siap pakai.</p>
+        <p>TraceOS adalah distro Linux berbasis Xubuntu 24.04 LTS yang dibangun untuk digital forensics, pemulihan data, dan investigasi jaringan.</p>
       </div>
       <div>
-        <a id="download-button" class="btn" href="#unduh">Unduh <span class="ti">&#8595;</span></a>
-        <a id="documentation-link" class="btn" href="#video">Dokumentasi <span class="ti">&#8594;</span></a>
+        <a id="download-button" class="btn" href="#unduh">Unduh <i class="ti-download"></i></a>
+        <a id="documentation-link" class="btn" href="#video">Dokumentasi <i class="ti-book"></i></a>
       </div>
     </div>
   </div>
-  <a id="down-arrow" href="#traceos-highlights" aria-label="Gulir ke bawah"><div></div></a>
+  <a id="down-arrow" href="#traceos-highlights"><div></div></a>
 </header>
 
 <main id="top">
 
-  <!-- ============ HIGHLIGHTS ============ -->
-  <section id="traceos-highlights" class="dark-section"><span id="fitur"></span>
-    <div><h1>Standar Baru Forensik Digital</h1></div>
-    <h3>Bukan sekadar kumpulan tools. TraceOS adalah <strong>platform</strong> kerja investigator.</h3>
+  <!-- ===================== HIGHLIGHTS ===================== -->
+  <section id="traceos-highlights">
+    <div><div><h1>Standar Baru Forensik Digital</h1></div></div>
+    <h3>Bukan sekadar kumpulan tools atau sebuah sistem operasi. TraceOS adalah <strong>platform</strong>.</h3>
     <ul>
       <li>
-        <a href="#traceos-highlights"><h4><span class="ti">&#9881;</span>Pekerjaan Jadi Lebih Mudah</h4></a>
-        <p>Anda bisa memasang tools forensik di Linux apa pun, tetapi semuanya harus dikonfigurasi manual. TraceOS sudah dioptimalkan agar investigator bisa langsung duduk dan bekerja.</p>
+        <a href="#traceos-highlights"><h4><i class="ti-settings"></i>Pekerjaan Jadi Lebih Mudah</h4></a>
+        <p>Anda bisa memasang tools forensik di Linux apa pun, tetapi semuanya harus dikonfigurasi manual. TraceOS dioptimalkan agar seorang <a href="#distro">analis</a> bisa langsung duduk dan bekerja.</p>
       </li>
       <li>
-        <a href="#distro"><h4><span class="ti">&#9673;</span>TraceOS Everywhere</h4></a>
-        <p>Versi TraceOS selalu dekat dengan Anda. Live USB, mesin virtual, bare metal, container, hingga cloud — semua tersedia sesuai kebutuhan investigasi.</p>
+        <a href="#unduh"><h4><i class="ti-target"></i>TraceOS Everywhere</h4></a>
+        <p>Versi TraceOS selalu dekat dengan Anda. Live USB, mesin virtual, bare metal, container, hingga cloud — semua <a href="#traceos-everywhere">tersedia</a> sesuai kebutuhan investigasi.</p>
       </li>
       <li>
-        <a href="#spesifikasi"><h4><span class="ti">&#9998;</span>Kustomisasi</h4></a>
-        <p>Dengan <a href="#traceos-tools">metapackage</a> yang dioptimalkan untuk tugas investigator dan proses remastering ISO yang terdokumentasi, mudah membuat versi TraceOS sesuai kebutuhan.</p>
+        <a href="#tools"><h4><i class="ti-pencil-alt"></i>Kustomisasi</h4></a>
+        <p>Dengan <a href="#tools">metapackage</a> yang dioptimalkan untuk tugas investigator, dan proses remastering ISO yang <a href="#distro">terdokumentasi</a>, mudah membuat versi TraceOS sesuai kebutuhan.</p>
       </li>
       <li>
-        <a href="#traceos-tools"><h4><span class="ti">&#9776;</span>Dokumentasi</h4></a>
-        <p>Baik Anda baru mulai atau sudah berpengalaman, dokumentasi kami menyediakan panduan praktis, tips, dan resep untuk memaksimalkan TraceOS. Semua terbuka dan kontribusi diterima.</p>
+        <a href="#video"><h4><i class="ti-book"></i>Dokumentasi</h4></a>
+        <p>Baik Anda baru mulai atau sudah berpengalaman, <a href="#video">dokumentasi</a> kami menyediakan panduan praktis, tips, dan resep untuk memaksimalkan TraceOS. Semua terbuka dan kontribusi diterima.</p>
       </li>
       <li>
-        <a href="#tim"><h4><span class="ti">&#9993;</span>Komunitas</h4></a>
-        <p>TraceOS lahir dari tim remastering <a href="#tim">Universitas Negeri Semarang</a> dan tumbuh bersama komunitas pengguna digital forensics Indonesia.</p>
+        <a href="#tim"><h4><i class="ti-comments"></i>Komunitas</h4></a>
+        <p>TraceOS lahir dari tim remastering <a href="#tim">Universitas Negeri Semarang</a> dan tumbuh bersama <a href="#tim">komunitas</a> pengguna digital forensics Indonesia.</p>
       </li>
     </ul>
     <figure>
-      <img src="assets/img/notebook.svg" alt="Laptop dengan TraceOS">
-      <img src="assets/img/desktop-xfce-1.svg" alt="Desktop TraceOS XFCE">
+      <a href="#distro"><img src="assets/img/notebook.svg" alt="Laptop generik"><img src="assets/img/desktop-xfce-1.svg" alt="Desktop TraceOS"></a>
     </figure>
   </section>
 
-  <!-- ============ TOOLS ============ -->
-  <section id="traceos-tools" class="white-section"><span id="tools"></span>
+  <!-- ===================== TOOLS ===================== -->
+  <section id="traceos-tools" class="white-section">
+    <span id="tools"></span>
     <h2>Semua tools yang kamu butuhkan</h2>
     <p>Platform TraceOS berisi berbagai tools dan utilitas forensik. Dari akuisisi barang bukti hingga pelaporan akhir, TraceOS membantu investigator menganalisis sistem dan data secara menyeluruh.</p>
-    <h4>Jelajahi <a class="chevron-link" href="#traceos-tools">tools TraceOS</a></h4>
+    <h4>Jelajahi <a class="chevron-link" href="#tools">Tools TraceOS</a></h4>
     <div>
       <div id="carousel">
         <div>
-          <a href="#traceos-tools"><img src="assets/img/tool-autopsy.svg" alt="Autopsy"><div>Autopsy</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-sleuthkit.svg" alt="The Sleuth Kit"><div>The Sleuth Kit</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-wireshark.svg" alt="Wireshark"><div>Wireshark</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-testdisk.svg" alt="TestDisk"><div>TestDisk</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-photorec.svg" alt="PhotoRec"><div>PhotoRec</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-foremost.svg" alt="Foremost"><div>Foremost</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-exiftool.svg" alt="ExifTool"><div>ExifTool</div></a>
-          <a href="#traceos-tools"><img src="assets/img/tool-binwalk.svg" alt="Binwalk"><div>Binwalk</div></a>
+          <a href="#tools"><img src="assets/img/tool-autopsy.svg" alt="Autopsy"><div>Autopsy</div></a>
+          <a href="#tools"><img src="assets/img/tool-sleuthkit.svg" alt="The Sleuth Kit"><div>The Sleuth Kit</div></a>
+          <a href="#tools"><img src="assets/img/tool-wireshark.svg" alt="Wireshark"><div>Wireshark</div></a>
+          <a href="#tools"><img src="assets/img/tool-testdisk.svg" alt="TestDisk"><div>TestDisk</div></a>
+          <a href="#tools"><img src="assets/img/tool-photorec.svg" alt="PhotoRec"><div>PhotoRec</div></a>
+          <a href="#tools"><img src="assets/img/tool-foremost.svg" alt="Foremost"><div>Foremost</div></a>
+          <a href="#tools"><img src="assets/img/tool-exiftool.svg" alt="ExifTool"><div>ExifTool</div></a>
+          <a href="#tools"><img src="assets/img/tool-binwalk.svg" alt="Binwalk"><div>Binwalk</div></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ EVERYWHERE ============ -->
+  <!-- ===================== EVERYWHERE ===================== -->
   <section id="traceos-everywhere">
     <h1>TraceOS Everywhere</h1>
     <div>
       <div>
-        <figure id="live-demo" class="demo">
+        <figure class="demo">
           <div class="demo-bar"><span></span><span></span><span></span><em>traceos@forensic: ~</em></div>
           <div class="demo-body">
             <p><b>traceos@forensic:~$</b> whoami</p>
             <p class="out">digital forensic analyst</p>
             <p><b>traceos@forensic:~$</b> autopsy --open case.e01</p>
-            <p class="out ok">[&#10003;] disk image loaded — ready to investigate</p>
+            <p class="out ok">[&#10003;] disk image loaded</p>
           </div>
         </figure>
         <h5>Live System</h5>
-        <p>Jalankan TraceOS langsung dari USB tanpa menyentuh disk internal — penting agar barang bukti tetap utuh.</p>
+        <p>Jalankan TraceOS langsung dari USB tanpa menyentuh disk internal agar barang bukti tetap utuh.</p>
       </div>
       <div>
-        <figure id="vm-demo" class="demo">
+        <figure class="demo">
           <div class="demo-bar"><span></span><span></span><span></span><em>TraceOS VM</em></div>
           <div class="demo-body">
             <p><b>$</b> traceos --info</p>
-            <p class="out">base: Xubuntu 24.04 LTS (XFCE) · remaster: Cubic</p>
+            <p class="out">base: Xubuntu 24.04 LTS (XFCE)</p>
             <p><b>$</b> volatility -f memory.raw imageinfo</p>
-            <p class="out ok">[&#10003;] profile detected — analysis ready</p>
+            <p class="out ok">[&#10003;] profile detected</p>
           </div>
         </figure>
         <h5>Virtual Machine</h5>
         <p>Uji dan latih alur investigasi di dalam VM terisolasi sebelum diterapkan pada kasus nyata.</p>
       </div>
       <div>
-        <figure id="bare-demo" class="demo">
+        <figure class="demo">
           <div class="demo-bar"><span></span><span></span><span></span><em>TraceOS install</em></div>
           <div class="demo-body">
             <p><b>$</b> df -h /evidence</p>
             <p class="out">/dev/sdb1  2.0T  0%  /evidence</p>
-            <p><b>$</b> foremost -i image.dd -o /evidence/carved</p>
+            <p><b>$</b> foremost -i image.dd -o /out</p>
             <p class="out ok">[&#10003;] carving complete</p>
           </div>
         </figure>
@@ -175,14 +181,14 @@
       </div>
     </div>
     <ul>
-      <li><img src="assets/img/logo.svg" alt=""><h3>ARM</h3><div>Perangkat hemat daya untuk akuisisi lapangan dan perangkat tinggal.</div></li>
-      <li><img src="assets/img/logo.svg" alt=""><h3>Cloud</h3><div>Penyedia cloud dengan TraceOS siap pakai tanpa mengurus infrastruktur.</div></li>
-      <li><img src="assets/img/logo.svg" alt=""><h3>Containers</h3><div>Docker dan LXD memberi akses cepat ke lingkungan forensik terisolasi.</div></li>
-      <li><img src="assets/img/logo.svg" alt=""><h3>USB Persisten</h3><div>Boot dari USB dengan penyimpanan persisten untuk menyimpan hasil analisis.</div></li>
+      <li><img src="assets/img/logo.svg" alt=""><h3>ARM</h3><div>Perangkat hemat daya untuk akuisisi lapangan.</div></li>
+      <li><img src="assets/img/logo.svg" alt=""><h3>Cloud</h3><div>Penyedia cloud dengan TraceOS siap pakai.</div></li>
+      <li><img src="assets/img/logo.svg" alt=""><h3>Containers</h3><div>Docker dan LXD untuk lingkungan forensik terisolasi.</div></li>
+      <li><img src="assets/img/logo.svg" alt=""><h3>USB Persisten</h3><div>Boot dari USB dengan penyimpanan persisten.</div></li>
     </ul>
   </section>
 
-  <!-- ============ VIDEO (autoplay saat di-scroll) ============ -->
+  <!-- ===================== VIDEO (berputar saat di-scroll) ===================== -->
   <section id="video" class="white-section">
     <h2>Lihat TraceOS Bekerja</h2>
     <p>Contoh alur investigasi di TraceOS — dari memuat citra disk, memulihkan berkas terhapus, membaca metadata, menganalisis lalu lintas jaringan, hingga mengekstrak firmware.</p>
@@ -199,28 +205,29 @@
     </figure>
   </section>
 
-  <!-- ============ DESKTOPS ============ -->
+  <!-- ===================== DESKTOPS ===================== -->
   <section id="desktops-preview" class="white-section">
-    <h1>Desktop TraceOS</h1>
-    <h3><img src="assets/img/logo.svg" alt="">Lingkungan XFCE yang ringan</h3>
+    <h1>Pilih desktop yang kamu sukai</h1>
     <div>
       <div>
-        <h3>XFCE Default</h3>
-        <p>Desktop XFCE yang ringan dan cepat, dengan menu tools forensik yang sudah tertata. Cocok untuk perangkat berspesifikasi sederhana hingga workstation investigasi.</p>
+        <h3><img src="assets/img/logo.svg" alt="TraceOS">XFCE Default</h3>
+        <p>XFCE adalah lingkungan desktop yang ringan untuk sistem operasi mirip UNIX. Cepat dan hemat sumber daya, namun tetap menarik dan mudah digunakan.</p>
+        <p>XFCE terdiri dari paket-paket terpisah yang bersama-sama menyediakan seluruh fungsi desktop. Inilah lingkungan desktop bawaan TraceOS.</p>
       </div>
-      <img src="assets/img/desktop-xfce-1.svg" alt="Desktop XFCE TraceOS">
+      <img src="assets/img/desktop-xfce-1.svg" alt="TraceOS dengan desktop XFCE">
     </div>
     <div>
+      <img src="assets/img/desktop-xfce-2.svg" alt="TraceOS dengan layout investigator">
       <div>
-        <h3>Layout Investigator</h3>
-        <p>Susunan panel dan shortcut yang dioptimalkan untuk alur kerja investigator: terminal, file manager, dan peluncur tools dalam satu layar.</p>
+        <h3><img src="assets/img/logo.svg" alt="TraceOS">Layout Investigator</h3>
+        <p>Susunan panel dan shortcut yang dioptimalkan untuk alur kerja investigator. Terminal, file manager, dan peluncur tools tersedia dalam satu layar.</p>
+        <p>Layout ini memudahkan perpindahan antar-tugas saat menangani citra disk, lalu lintas jaringan, dan metadata berkas secara bersamaan.</p>
       </div>
-      <img src="assets/img/desktop-xfce-2.svg" alt="Layout investigator TraceOS">
     </div>
   </section>
 
-  <!-- ============ DISTRO / SPESIFIKASI ============ -->
-  <section id="distro" class="dark-section">
+  <!-- ===================== DISTRO / SPESIFIKASI ===================== -->
+  <section id="distro">
     <h1 id="spesifikasi">Tentang TraceOS</h1>
     <p>TraceOS dirancang sebagai distro Linux yang menyediakan berbagai tools digital forensics untuk membantu pengguna menganalisis file, memulihkan data yang terhapus, serta menginvestigasi aktivitas jaringan dalam satu sistem operasi.</p>
     <div id="spec-wrap">
@@ -247,7 +254,7 @@
     </div>
   </section>
 
-  <!-- ============ TIM ============ -->
+  <!-- ===================== TIM ===================== -->
   <section id="tim" class="white-section">
     <h2>Yang Membangun TraceOS</h2>
     <p>Tim remastering TraceOS dari <strong>Universitas Negeri Semarang</strong>.</p>
@@ -259,8 +266,8 @@
     </div>
   </section>
 
-  <!-- ============ UNDUH ============ -->
-  <section id="unduh" class="dark-section">
+  <!-- ===================== UNDUH ===================== -->
+  <section id="unduh">
     <h1>Dapatkan TraceOS</h1>
     <p>Berkas ISO sedang disiapkan. Video demo sudah dapat ditonton di bagian dokumentasi.</p>
     <div id="download-grid">
@@ -274,7 +281,7 @@
         <h4>Video Demo</h4>
         <p class="meta">Panduan &amp; demonstrasi tools</p>
         <p>Video perkenalan TraceOS serta contoh penggunaan tools forensik di dalamnya.</p>
-        <a class="btn" href="#video">Tonton video &#8594;</a>
+        <a class="btn" href="#video">Tonton video</a>
       </article>
     </div>
     <p id="faq" class="note">Info: bagian ini akan diperbarui dengan tautan ISO segera setelah berkas tersedia.</p>
@@ -285,19 +292,19 @@
 <footer>
   <div class="container">
     <div>
-      <a id="footer-logo" href="#top"><img src="assets/img/logo.svg" alt="" width="34" height="34"><span>TraceOS</span></a>
+      <a id="footer-logo" href="#top"><img src="assets/img/logo.svg" alt=""><span>TraceOS</span></a>
       <p>Jejak digital yang ditinggalkan aktivitas dalam sistem komputer.</p>
     </div>
     <nav>
       <a href="#traceos-highlights">Fitur</a>
-      <a href="#traceos-tools">Tools</a>
+      <a href="#tools">Tools</a>
       <a href="#video">Video</a>
       <a href="#distro">Distro</a>
       <a href="#tim">Tim</a>
       <a href="#unduh">Unduh</a>
     </nav>
   </div>
-  <p class="copyright">© <span id="year">2026</span> TraceOS · Universitas Negeri Semarang. Dibangun di atas Xubuntu 24.04 LTS · Dirilis di bawah semangat open source.</p>
+  <p class="copyright">© <span id="year">2026</span> TraceOS · Universitas Negeri Semarang. Dibangun di atas Xubuntu 24.04 LTS.</p>
 </footer>
 
 <script src="assets/js/main.js"></script>
