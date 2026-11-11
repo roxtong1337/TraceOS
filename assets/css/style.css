@@ -431,3 +431,56 @@ img,svg{display:block;max-width:100%}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
  .js-motion .reveal{opacity:1;transform:none}
 }
+
+/* Custom binary-cat brand artwork supplied by the TraceOS team. */
+.logo__symbol{
+  width:66px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  flex:none;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  clip-path:none;
+}
+.logo__symbol img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 0 8px rgba(125,255,169,.22));
+}
+.scanner__field{
+  min-height:380px;
+}
+.scanner__logo{
+  display:block;
+  position:relative;
+  z-index:1;
+  width:min(94%,440px);
+  height:auto;
+  max-height:355px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 18px rgba(47,246,104,.22));
+}
+.scanner__ring{
+  opacity:.58;
+}
+.footer__cat-logo{
+  display:block;
+  width:140px;
+  max-width:100%;
+  height:auto;
+  margin:-23px 0 5px;
+  filter:drop-shadow(0 0 12px rgba(125,255,169,.13));
+}
+@media(max-width:650px){
+  .logo__symbol{width:55px;height:45px}
+  .scanner__field{min-height:325px}
+  .scanner__logo{width:min(96%,390px);max-height:305px}
+}
+@media(max-width:380px){
+  .logo__symbol{width:47px;height:41px}
+  .scanner__field{min-height:297px}
+  .scanner__logo{max-height:275px}
+}
