@@ -8,9 +8,9 @@ Website resmi prototipe **TraceOS**: proyek remastering Linux berbasis **Xubuntu
 
 ## Identitas visual
 
-Logo resmi TraceOS menggunakan **siluet kucing yang tersusun dari angka biner 0 dan 1**, disediakan oleh tim TraceOS. Versi gambar yang dioptimalkan untuk website berada di `assets/img/traceos-binary-cat.svg`. Aset SVG tersebut membungkus citra WebP transparan agar ukuran unduhan ringan; gambar asli resolusi tinggi disimpan terpisah oleh pemilik.
+Logo resmi TraceOS menggunakan **siluet kucing yang tersusun dari angka biner 0 dan 1**, disediakan oleh tim TraceOS. Gambar transparan yang dioptimalkan untuk website berada di `assets/img/traceos-cat.webp`. File SVG lama tetap disimpan sebagai arsip. Gambar asli resolusi tinggi disimpan terpisah oleh pemilik.
 
-Logo digunakan sebagai ikon navigasi, artwork utama hero, favicon, dan elemen footer. Layout website terinspirasi struktur situs distro Linux profesional, dengan identitas TraceOS sendiri.
+Logo digunakan sebagai ikon navigasi, artwork utama hero, favicon, dan elemen footer. Layout website terinspirasi halaman utama distro Linux seperti Kali: logo besar di kiri, penjelasan dan tombol utama di kanan, serta section fitur dan daftar tool. Warna hijau sengaja dibuat lebih lembut (sage/forest green) agar tidak terlalu neon. Identitas visual tetap milik TraceOS.
 
 ## Isi website
 
@@ -40,8 +40,10 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
 ├── README.md
 └── assets
     ├── css/
-    │   └── style.css
+    │   ├── style.css
+    │   └── kali-inspired.css
     ├── img/
+    │   ├── traceos-cat.webp
     │   └── traceos-binary-cat.svg
     └── js/
         └── main.js
