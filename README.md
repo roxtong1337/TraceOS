@@ -28,7 +28,7 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
 
 ## Struktur
 
-\`\`\`text
+```text
 .
 ├── index.html
 ├── README.md
@@ -37,26 +37,26 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
     │   └── style.css
     └── js/
         └── main.js
-\`\`\`
+```
 
-Seluruh halaman berbasis **HTML, CSS, dan JavaScript murni**. Tidak memerlukan Node, npm, framework, maupun build pipeline. GitHub Pages langsung menyajikan berkas statis dari branch \`main\` (jika pengaturan Pages mengarah ke root branch tersebut).
+Seluruh halaman berbasis **HTML, CSS, dan JavaScript murni**. Tidak memerlukan Node, npm, framework, maupun build pipeline. GitHub Pages langsung menyajikan berkas statis dari branch `main` (jika pengaturan Pages mengarah ke root branch tersebut).
 
 ## Pratinjau lokal
 
-Buka \`index.html\` di browser, atau jalankan dari direktori repo:
+Buka `index.html` di browser, atau jalankan dari direktori repo:
 
-\`\`\`bash
+```bash
 python3 -m http.server 8000
-\`\`\`
+```
 
-Lalu kunjungi \`http://localhost:8000\`.
+Lalu kunjungi `http://localhost:8000`.
 
 ## Menambahkan screenshot desktop
 
-1. Simpan screenshot XFCE TraceOS asli di \`assets/img/traceos-desktop.png\`.
-2. Cari elemen \`showcase__placeholder\` di \`index.html\`.
+1. Simpan screenshot XFCE TraceOS asli di `assets/img/traceos-desktop.png`.
+2. Cari elemen `showcase__placeholder` di `index.html`.
 3. Ganti konten placeholder dengan gambar responsive, misalnya:
-   \`<img src="assets/img/traceos-desktop.png" alt="Tampilan desktop XFCE pada TraceOS" loading="lazy">\`
+   `<img src="assets/img/traceos-desktop.png" alt="Tampilan desktop XFCE pada TraceOS" loading="lazy">`
 4. Tambahkan styling agar gambar memenuhi lebar area dan mempertahankan aspect ratio.
 
 Jangan menyebut visual konsep sebagai screenshot OS asli.
@@ -64,19 +64,19 @@ Jangan menyebut visual konsep sebagai screenshot OS asli.
 ## Menambahkan ISO dan checksum
 
 1. Upload ISO ke **GitHub Releases** atau platform distribusi berkas lain yang sesuai. **Jangan** mengunggah ISO berukuran besar ke folder GitHub Pages.
-2. Hitung SHA-256 file rilis: \`sha256sum TraceOS-1.0-amd64.iso\`.
-3. Di bagian \`#rilis\` pada \`index.html\`, ganti badge **SEGERA** dengan tautan ke URL unduhan ISO asli.
+2. Hitung SHA-256 file rilis: `sha256sum TraceOS-1.0-amd64.iso`.
+3. Di bagian `#rilis` pada `index.html`, ganti badge **SEGERA** dengan tautan ke URL unduhan ISO asli.
 4. Tampilkan checksum SHA-256 yang sesuai dan anjurkan pengguna memverifikasi hasil download.
 
 ## Menambahkan video
 
 1. Upload video demo ke YouTube atau penyedia video yang digunakan.
-2. Ganti item "Video Demonstrasi" di bagian \`#rilis\` menjadi tautan video, atau sisipkan embed pada area preview.
-3. Jika menggunakan iframe, sertakan \`title\` dan \`loading="lazy"\`.
+2. Ganti item "Video Demonstrasi" di bagian `#rilis` menjadi tautan video, atau sisipkan embed pada area preview.
+3. Jika menggunakan iframe, sertakan `title` dan `loading="lazy"`.
 
 ## Catatan
 
 - Panel terminal, gambar sidik jari ASCII, dan metadata diagnostik di hero adalah **artwork / visualisasi konsep**, bukan output live.
 - Link **Explore tool** menuju situs resmi proyek masing-masing.
 - Proyek independen untuk pendidikan; bukan produk resmi Xubuntu atau Kali Linux.
-- Animasi dinonaktifkan atau dikurangi mengikuti preferensi \`prefers-reduced-motion\`.
+- Animasi dinonaktifkan atau dikurangi mengikuti preferensi `prefers-reduced-motion`.
