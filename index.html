@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d0b">
+  <meta name="theme-color" content="#141f26">
   <meta name="description" content="TraceOS adalah remaster Xubuntu 24.04 LTS untuk digital forensics. Jelajahi fitur investigasi bukti digital, pemulihan data, analisis jaringan, dan tool forensik bawaan.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="TraceOS — Every Trace Tells a Story">
   <meta property="og:description" content="Digital Forensics Linux, remastered from Xubuntu 24.04 LTS. Built to investigate.">
   <meta property="og:url" content="https://roxtong1337.github.io/TraceOS/">
   <title>TraceOS — Digital Forensics Linux</title>
-  <link rel="icon" type="image/svg+xml" href="assets/img/traceos-binary-cat.svg">
+  <link rel="icon" type="image/webp" href="assets/img/traceos-cat.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/kali-inspired.css">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
@@ -28,7 +29,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#beranda" class="logo" aria-label="TraceOS, kembali ke beranda">
-        <span class="logo__symbol" aria-hidden="true"><img src="assets/img/traceos-binary-cat.svg" alt="" width="66" height="55"></span>
+        <span class="logo__symbol" aria-hidden="true"><img src="assets/img/traceos-cat.webp" alt="" width="66" height="55"></span>
         <span class="logo__text">trace<span>OS</span><small>FORENSIC LINUX</small></span>
       </a>
       <nav class="nav-links" id="siteNav" aria-label="Navigasi utama">
@@ -49,46 +50,26 @@
       <div class="hero__orb hero__orb--one" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="section-kicker hero__kicker"><span class="kicker-line"></span> [ 01 / INTRODUCING TRACEOS ]</p>
-          <div class="hero__tag"><span class="live-dot"></span> REMASTERED LINUX DISTRIBUTION <span class="hero__tag-end">V1.0</span></div>
-          <h1 id="hero-heading">Every <em>trace</em><br>tells a <span class="outline-word">story.</span></h1>
-          <p class="hero__subtitle">Ungkap jejak digital.<br><strong>Temukan bukti yang tersembunyi.</strong></p>
-          <p class="hero__description">TraceOS adalah distribusi Linux berbasis <strong>Xubuntu 24.04 LTS</strong> yang dirancang untuk investigasi digital. Analisis barang bukti, pulihkan data, dan telusuri aktivitas jaringan—dalam satu lingkungan kerja.</p>
+          <p class="section-kicker hero__kicker"><span class="kicker-line"></span> TRACEOS / DIGITAL FORENSICS</p>
+          <h1 id="hero-heading">The Digital Forensics<br><span class="hero__headline-accent">Linux Distribution.</span></h1>
+          <p class="hero__subtitle">Bukti digital memiliki cerita.<br><strong>TraceOS membantu kamu menemukannya.</strong></p>
+          <p class="hero__description">Remaster Linux berbasis <strong>Xubuntu 24.04 LTS</strong>, dengan tool investigasi digital dalam satu lingkungan. Analisis barang bukti, pulihkan data, dan telusuri aktivitas jaringan dengan lebih mudah.</p>
           <div class="hero__actions">
-            <a href="#fitur" class="button button--primary">Jelajahi TraceOS <span aria-hidden="true">↗</span></a>
-            <a href="#rilis" class="button button--secondary">Status Unduhan <span aria-hidden="true">↓</span></a>
+            <a href="#rilis" class="button button--primary">Get TraceOS <span aria-hidden="true">↓</span></a>
+            <a href="#fitur" class="button button--secondary">Explore Features <span aria-hidden="true">↗</span></a>
           </div>
           <div class="hero__facts" aria-label="Spesifikasi singkat">
-            <span><b>BASE</b> Xubuntu 24.04</span>
+            <span><b>BASED ON</b> Xubuntu 24.04 LTS</span>
             <span><b>DESKTOP</b> XFCE</span>
-            <span><b>BUILD</b> Cubic</span>
+            <span><b>TOOLS</b> 08 Forensic</span>
           </div>
         </div>
 
         <div class="hero__visual">
-          <div class="scanner">
-            <div class="scanner__top">
-              <span><span class="live-dot"></span> TRACEOS / FORENSIC CONSOLE</span>
-              <span class="scanner__top-right">[VISUAL CONCEPT]</span>
-            </div>
-            <div class="scanner__field">
-              <div class="scanner__cross scanner__cross--tl">+</div><div class="scanner__cross scanner__cross--tr">+</div>
-              <div class="scanner__cross scanner__cross--bl">+</div><div class="scanner__cross scanner__cross--br">+</div>
-              <div class="scanner__ring" aria-hidden="true"></div>
-              <img class="scanner__logo" src="assets/img/traceos-binary-cat.svg" alt="Logo TraceOS: siluet kucing yang dibentuk dari angka biner 0 dan 1" width="440" height="368" decoding="async">
-              <div class="scanner__beam" aria-hidden="true"></div>
-              <div class="scanner__field-label scanner__field-label--left">ID: TR-024<br>TRACE DETECTED</div>
-              <div class="scanner__field-label scanner__field-label--right">EVIDENCE<br>01 / 08</div>
-            </div>
-            <div class="scanner__terminal" aria-label="Contoh visual terminal TraceOS">
-              <div><span class="terminal-muted">root@traceos:~#</span> <span class="terminal-strong">traceos --identify</span></div>
-              <div><span class="terminal-ok">[+]</span> CASE TYPE: DIGITAL FORENSICS</div>
-              <div><span class="terminal-ok">[+]</span> ANALYSIS MODULES: <span class="terminal-strong">08 LOADED</span></div>
-              <div><span class="terminal-ok">[+]</span> READY TO FOLLOW THE TRACE<span class="blink-cursor">_</span></div>
-            </div>
-            <div class="scanner__bottom"><span>01. CAPTURE <b>━━━</b></span><span>02. ANALYZE <b>━━━</b></span><span>03. RECOVER <b>━━━</b></span></div>
+          <div class="hero__cat-wrap">
+            <img class="hero__cat" src="assets/img/traceos-cat.webp" alt="Logo TraceOS, siluet kucing yang dibentuk dari angka biner nol dan satu" width="500" height="418" fetchpriority="high" decoding="async">
           </div>
-          <span class="visual-side-label" aria-hidden="true">TRC / 001 — DIGITAL EVIDENCE ENGINE</span>
+          <span class="hero__visual-label" aria-hidden="true">TRACEOS // FOLLOW THE DIGITAL TRACE</span>
         </div>
       </div>
       <div class="hero__bottom container"><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>UNIVERSITAS NEGERI SEMARANG <span class="separator">//</span> PROJECT REMASTERING</span></div>
@@ -271,7 +252,7 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="container footer__top"><div><img class="footer__cat-logo" src="assets/img/traceos-binary-cat.svg" alt="" loading="lazy" width="138" height="116"><a href="#beranda" class="footer__logo">trace<span>OS</span><small> _</small></a><p>Digital Forensics Linux<br>Every trace tells a story.</p></div><div class="footer__links"><div><span>EXPLORE</span><a href="#fitur">Fitur Unggulan</a><a href="#tools">Forensic Toolkit</a><a href="#distro">Tentang Distro</a></div><div><span>PROJECT</span><a href="#tim">Tim Remastering</a><a href="#preview">Preview</a><a href="https://github.com/roxtong1337/TraceOS" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
+    <div class="container footer__top"><div><img class="footer__cat-logo" src="assets/img/traceos-cat.webp" alt="" loading="lazy" width="138" height="116"><a href="#beranda" class="footer__logo">trace<span>OS</span><small> _</small></a><p>Digital Forensics Linux<br>Every trace tells a story.</p></div><div class="footer__links"><div><span>EXPLORE</span><a href="#fitur">Fitur Unggulan</a><a href="#tools">Forensic Toolkit</a><a href="#distro">Tentang Distro</a></div><div><span>PROJECT</span><a href="#tim">Tim Remastering</a><a href="#preview">Preview</a><a href="https://github.com/roxtong1337/TraceOS" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
     <div class="container footer__bottom"><span>© <span id="year">2026</span> TraceOS Team · Universitas Negeri Semarang</span><span>Independent educational remastering project · Not affiliated with Xubuntu or Kali Linux.</span></div>
   </footer>
 </body>
