@@ -1,396 +1,290 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TraceOS — Digital Forensics Linux Distribution</title>
-  <meta name="description" content="TraceOS adalah distro Linux berbasis Xubuntu 24.04 LTS yang dikemas khusus untuk digital forensics: analisis barang bukti, pemulihan data, dan investigasi jaringan dalam satu sistem operasi." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23070d0a'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2300ff9c' font-family='monospace'%3ET%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d0b">
+  <meta name="description" content="TraceOS adalah remaster Xubuntu 24.04 LTS untuk digital forensics. Jelajahi fitur investigasi bukti digital, pemulihan data, analisis jaringan, dan tool forensik bawaan.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TraceOS — Every Trace Tells a Story">
+  <meta property="og:description" content="Digital Forensics Linux, remastered from Xubuntu 24.04 LTS. Built to investigate.">
+  <meta property="og:url" content="https://roxtong1337.github.io/TraceOS/">
+  <title>TraceOS — Digital Forensics Linux</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080d0b'/%3E%3Cpath d='M17 18h30M32 18v29M21 47h22' stroke='%237dffa9' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <!-- Scanline / grid overlay -->
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
-
-  <!-- ============ NAVBAR ============ -->
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a class="brand" href="#top" aria-label="TraceOS home">
-        <span class="brand__mark" aria-hidden="true">T</span>
-        <span class="brand__text">Trace<span class="accent">OS</span></span>
+  <a class="skip-link" href="#main">Langsung ke konten</a>
+  <div class="announcement">
+    <div class="container announcement__inner">
+      <span class="announcement__status"><span class="live-dot"></span> PROJECT STATUS / IN DEVELOPMENT</span>
+      <span class="announcement__right">XUBUNTU 24.04 LTS <span class="separator">//</span> XFCE DESKTOP <span class="separator">//</span> FORENSIC EDITION</span>
+    </div>
+  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#beranda" class="logo" aria-label="TraceOS, kembali ke beranda">
+        <span class="logo__symbol" aria-hidden="true"><span>›_</span></span>
+        <span class="logo__text">trace<span>OS</span><small>FORENSIC LINUX</small></span>
       </a>
-      <nav class="nav__links" id="navLinks" aria-label="Navigasi utama">
+      <nav class="nav-links" id="siteNav" aria-label="Navigasi utama">
+        <a href="#tentang">Tentang</a>
         <a href="#fitur">Fitur</a>
         <a href="#tools">Tools</a>
         <a href="#distro">Distro</a>
         <a href="#tim">Tim</a>
-        <a href="#unduh">Unduh</a>
-        <a class="btn btn--ghost nav__cta" href="#unduh">Get TraceOS</a>
+        <a href="#rilis" class="nav-download"><span aria-hidden="true">↧</span> Get TraceOS</a>
       </nav>
-      <button class="nav__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main id="top">
-    <!-- ============ HERO ============ -->
-    <section class="hero">
+  <main id="main">
+    <section class="hero" id="beranda" aria-labelledby="hero-heading">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--one" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <div class="hero__copy">
-          <p class="eyebrow"><span class="dot"></span> Berbasis Xubuntu 24.04 LTS · XFCE</p>
-          <h1 class="hero__title">
-            Melacak Jejak Digital<br />
-            <span class="accent">dalam Satu Sistem Operasi</span>
-          </h1>
-          <p class="hero__lead">
-            <strong>TraceOS</strong> — dari kata <em>trace</em>, jejak — adalah distro Linux untuk
-            <strong>digital forensics</strong>. Dirancang untuk menganalisis barang bukti digital,
-            memulihkan data yang terhapus, dan menginvestigasi aktivitas jaringan, semua dalam satu
-            lingkungan kerja yang siap pakai.
-          </p>
+        <div class="hero__content">
+          <p class="section-kicker hero__kicker"><span class="kicker-line"></span> [ 01 / INTRODUCING TRACEOS ]</p>
+          <div class="hero__tag"><span class="live-dot"></span> REMASTERED LINUX DISTRIBUTION <span class="hero__tag-end">V1.0</span></div>
+          <h1 id="hero-heading">Every <em>trace</em><br>tells a <span class="outline-word">story.</span></h1>
+          <p class="hero__subtitle">Ungkap jejak digital.<br><strong>Temukan bukti yang tersembunyi.</strong></p>
+          <p class="hero__description">TraceOS adalah distribusi Linux berbasis <strong>Xubuntu 24.04 LTS</strong> yang dirancang untuk investigasi digital. Analisis barang bukti, pulihkan data, dan telusuri aktivitas jaringan—dalam satu lingkungan kerja.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#unduh">Unduh TraceOS</a>
-            <a class="btn btn--outline" href="#fitur">Jelajahi Fitur</a>
+            <a href="#fitur" class="button button--primary">Jelajahi TraceOS <span aria-hidden="true">↗</span></a>
+            <a href="#rilis" class="button button--secondary">Status Unduhan <span aria-hidden="true">↓</span></a>
           </div>
-          <ul class="hero__meta">
-            <li><span class="k">Basis</span> Xubuntu 24.04 LTS</li>
-            <li><span class="k">Desktop</span> XFCE</li>
-            <li><span class="k">Remastering</span> Cubic</li>
-          </ul>
-        </div>
-
-        <div class="hero__terminal" aria-label="Contoh ASCII art dan terminal TraceOS">
-          <div class="term">
-            <div class="term__bar">
-              <span class="term__dot term__dot--r"></span>
-              <span class="term__dot term__dot--y"></span>
-              <span class="term__dot term__dot--g"></span>
-              <span class="term__title">traceos@forensic: ~</span>
-            </div>
-            <div class="term__body">
-<pre class="ascii" aria-hidden="true">
- █████████╗██████╗  █████╗  ██████╗███████╗ ██████╗ ███████╗
- ╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔════╝
-    ██║   ██████╔╝███████║██║     █████╗  ██║   ██║███████╗
-    ██║   ██╔══██╗██╔══██║██║     ██╔══╝  ██║   ██║╚════██║
-    ██║   ██║  ██║██║  ██║╚██████╗███████╗╚██████╔╝███████║
-    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝ ╚═════╝ ╚══════╝
-</pre>
-              <div class="term__lines" id="typeLines">
-                <p><span class="prompt">traceos@forensic:~$</span> <span class="cmd" data-text="whoami">whoami</span></p>
-                <p class="out">digital forensic analyst</p>
-                <p><span class="prompt">traceos@forensic:~$</span> <span class="cmd" data-text="traceos --info">traceos --info</span></p>
-                <p class="out">base: Xubuntu 24.04 LTS (XFCE) · remaster: Cubic</p>
-                <p><span class="prompt">traceos@forensic:~$</span> <span class="cmd" data-text="autopsy --open case.e01">autopsy --open case.e01</span></p>
-                <p class="out out--ok">[✓] disk image loaded — ready to investigate</p>
-                <p><span class="prompt">traceos@forensic:~$</span> <span class="caret"></span></p>
-              </div>
-            </div>
+          <div class="hero__facts" aria-label="Spesifikasi singkat">
+            <span><b>BASE</b> Xubuntu 24.04</span>
+            <span><b>DESKTOP</b> XFCE</span>
+            <span><b>BUILD</b> Cubic</span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ STATS ============ -->
-    <section class="stats">
-      <div class="container stats__grid">
-        <div class="stat"><span class="stat__num" data-count="8">0</span><span class="stat__label">Tools forensik utama</span></div>
-        <div class="stat"><span class="stat__num" data-count="3">0</span><span class="stat__label">Fitur unggulan</span></div>
-        <div class="stat"><span class="stat__num" data-count="24" data-suffix=".04">0</span><span class="stat__label">Basis Ubuntu LTS</span></div>
-        <div class="stat"><span class="stat__num" data-count="4">0</span><span class="stat__label">Anggota tim</span></div>
-      </div>
-    </section>
-
-    <!-- ============ FITUR UNGGULAN ============ -->
-    <section class="section" id="fitur">
-      <div class="container">
-        <header class="section__head">
-          <p class="eyebrow"><span class="dot"></span> Fitur Unggulan</p>
-          <h2 class="section__title">Semua yang Dibutuhkan Investigator</h2>
-          <p class="section__sub">
-            Tiga pilar utama TraceOS yang menyatukan analisis barang bukti, pemulihan data,
-            dan investigasi jaringan ke dalam satu alur kerja.
-          </p>
-        </header>
-
-        <div class="grid grid--3">
-          <article class="card card--feature">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><circle cx="11" cy="11" r="4"/><path d="m14 14 3 3"/></svg>
+        <div class="hero__visual">
+          <div class="scanner">
+            <div class="scanner__top">
+              <span><span class="live-dot"></span> TRACEOS / FORENSIC CONSOLE</span>
+              <span class="scanner__top-right">[VISUAL CONCEPT]</span>
             </div>
-            <span class="card__num">01</span>
-            <h3>Digital Evidence Analysis</h3>
-            <p>
-              Memudahkan investigasi barang bukti digital melalui analisis filesystem,
-              disk image, dan metadata file — dari satu citra disk hingga struktur file terdalam.
-            </p>
-            <ul class="card__list">
-              <li>Analisis disk image &amp; filesystem</li>
-              <li>Ekstraksi metadata file</li>
-              <li>Pelaporan barang bukti terstruktur</li>
-            </ul>
-          </article>
-
-          <article class="card card--feature">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6m0 0 3-3m-3 3L9 6"/><path d="M5 13a7 7 0 1 0 14 0"/><path d="M5 13h14"/><path d="M12 17v4"/></svg>
+            <div class="scanner__field">
+              <div class="scanner__cross scanner__cross--tl">+</div><div class="scanner__cross scanner__cross--tr">+</div>
+              <div class="scanner__cross scanner__cross--bl">+</div><div class="scanner__cross scanner__cross--br">+</div>
+              <div class="scanner__ring" aria-hidden="true"></div>
+              <pre class="fingerprint" aria-label="Artwork ASCII berbentuk sidik jari">        .-~~~~~~~~~-.
+     .-'  _..---.._ '-.
+    /   .'  .---.  '.  \
+   /  .'  .'  _  '.  '. \
+  |  /  /  .'-'.  \  \  |
+  | |  |  /  _  \  |  | |
+  | |  | |  / \  | |  | |
+  | |  | |  \_/  | |  | |
+  | |  |  \     /  |  | |
+  |  \  \  '---'  /  /  |
+   \  '.  '.___.'  .'  /
+    '.  '-._____.-'  .'
+      '-._________.-'</pre>
+              <div class="scanner__beam" aria-hidden="true"></div>
+              <div class="scanner__field-label scanner__field-label--left">ID: TR-024<br>TRACE DETECTED</div>
+              <div class="scanner__field-label scanner__field-label--right">EVIDENCE<br>01 / 08</div>
             </div>
-            <span class="card__num">02</span>
-            <h3>Data Recovery &amp; File Investigation</h3>
-            <p>
-              Menyediakan tools untuk memulihkan file yang terhapus serta mengidentifikasi
-              data tersembunyi, termasuk file carving dan pemeriksaan struktur partisi.
-            </p>
-            <ul class="card__list">
-              <li>Pemulihan file terhapus</li>
-              <li>File carving berbasis signature</li>
-              <li>Pemeriksaan &amp; pemulihan partisi</li>
-            </ul>
-          </article>
-
-          <article class="card card--feature">
-            <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+            <div class="scanner__terminal" aria-label="Contoh visual terminal TraceOS">
+              <div><span class="terminal-muted">root@traceos:~#</span> <span class="terminal-strong">traceos --identify</span></div>
+              <div><span class="terminal-ok">[+]</span> CASE TYPE: DIGITAL FORENSICS</div>
+              <div><span class="terminal-ok">[+]</span> ANALYSIS MODULES: <span class="terminal-strong">08 LOADED</span></div>
+              <div><span class="terminal-ok">[+]</span> READY TO FOLLOW THE TRACE<span class="blink-cursor">_</span></div>
             </div>
-            <span class="card__num">03</span>
-            <h3>Network Forensics</h3>
-            <p>
-              Mendukung investigasi aktivitas jaringan melalui analisis paket data dan
-              file PCAP menggunakan Wireshark untuk menelusuri lalu lintas yang mencurigakan.
-            </p>
-            <ul class="card__list">
-              <li>Analisis lalu lintas jaringan</li>
-              <li>Inspeksi file PCAP</li>
-              <li>Deteksi aktivitas mencurigakan</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ TOOLS ============ -->
-    <section class="section section--alt" id="tools">
-      <div class="container">
-        <header class="section__head">
-          <p class="eyebrow"><span class="dot"></span> Paket Utama</p>
-          <h2 class="section__title">Arsenal Tools Forensik</h2>
-          <p class="section__sub">
-            Delapan tools utama yang sudah terpasang pada TraceOS untuk menangani
-            analisis disk, pemulihan data, metadata, dan jaringan.
-          </p>
-        </header>
-
-        <div class="grid grid--4">
-          <article class="tool">
-            <h3 class="tool__name">Autopsy</h3>
-            <p class="tool__desc">Platform digital forensics untuk menganalisis disk image, filesystem, dan barang bukti digital melalui antarmuka grafis.</p>
-            <span class="tool__tag">GUI · Analysis</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">The Sleuth Kit</h3>
-            <p class="tool__desc">Menganalisis filesystem, partisi, dan disk image untuk menemukan bukti digital.</p>
-            <span class="tool__tag">CLI · Filesystem</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">Wireshark</h3>
-            <p class="tool__desc">Menganalisis lalu lintas jaringan dan file PCAP untuk investigasi aktivitas mencurigakan.</p>
-            <span class="tool__tag">GUI · Network</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">TestDisk</h3>
-            <p class="tool__desc">Memeriksa struktur partisi serta membantu memulihkan partisi dan data yang hilang.</p>
-            <span class="tool__tag">CLI · Recovery</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">PhotoRec</h3>
-            <p class="tool__desc">Memulihkan file yang terhapus atau hilang dari media penyimpanan.</p>
-            <span class="tool__tag">CLI · Recovery</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">Foremost</h3>
-            <p class="tool__desc">Melakukan file carving untuk mengekstrak file berdasarkan struktur dan signature data.</p>
-            <span class="tool__tag">CLI · Carving</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">ExifTool</h3>
-            <p class="tool__desc">Mengekstrak serta menganalisis metadata gambar, dokumen, dan berbagai jenis file.</p>
-            <span class="tool__tag">CLI · Metadata</span>
-          </article>
-          <article class="tool">
-            <h3 class="tool__name">Binwalk</h3>
-            <p class="tool__desc">Menganalisis struktur file biner dan mendeteksi data yang tertanam di dalamnya.</p>
-            <span class="tool__tag">CLI · Binary</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ DISTRO / TENTANG ============ -->
-    <section class="section" id="distro">
-      <div class="container">
-        <header class="section__head">
-          <p class="eyebrow"><span class="dot"></span> Rencana Distro</p>
-          <h2 class="section__title">Tentang TraceOS</h2>
-          <p class="section__sub">
-            TraceOS dirancang sebagai distro Linux yang menyediakan berbagai tools digital
-            forensics untuk membantu pengguna menganalisis file, memulihkan data yang terhapus,
-            serta menginvestigasi aktivitas jaringan dalam satu sistem operasi.
-          </p>
-        </header>
-
-        <div class="about">
-          <div class="about__col">
-            <h3 class="about__h">Latar Belakang</h3>
-            <p>
-              Meningkatnya kasus kejahatan siber membuat proses investigasi dan analisis bukti
-              digital semakin penting. TraceOS hadir sebagai lingkungan kerja yang siap pakai
-              untuk kebutuhan tersebut — dari analisis barang bukti hingga investigasi jaringan.
-            </p>
-
-            <h3 class="about__h">Sasaran Pengguna</h3>
-            <ul class="chips">
-              <li>Siswa SMK</li>
-              <li>Mahasiswa IT</li>
-              <li>Digital Forensic Analyst</li>
-              <li>Pemula investigasi digital</li>
-            </ul>
+            <div class="scanner__bottom"><span>01. CAPTURE <b>━━━</b></span><span>02. ANALYZE <b>━━━</b></span><span>03. RECOVER <b>━━━</b></span></div>
           </div>
+          <span class="visual-side-label" aria-hidden="true">TRC / 001 — DIGITAL EVIDENCE ENGINE</span>
+        </div>
+      </div>
+      <div class="hero__bottom container"><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>UNIVERSITAS NEGERI SEMARANG <span class="separator">//</span> PROJECT REMASTERING</span></div>
+    </section>
 
-          <div class="about__col">
-            <h3 class="about__h">Spesifikasi Distro</h3>
-            <table class="spec">
-              <tbody>
-                <tr><th>Nama Distro</th><td>TraceOS</td></tr>
-                <tr><th>Tema</th><td>Cybersecurity — Digital Forensics</td></tr>
-                <tr><th>Distro Dasar</th><td>Xubuntu 24.04 LTS</td></tr>
-                <tr><th>Lingkungan Desktop</th><td>XFCE</td></tr>
-                <tr><th>Alat Remastering</th><td>Cubic</td></tr>
-                <tr><th>Instansi</th><td>Universitas Negeri Semarang</td></tr>
-              </tbody>
-            </table>
+    <section class="metrics" aria-label="TraceOS dalam angka">
+      <div class="container metrics__inner">
+        <div class="metric"><span class="metric__value">08<span>+</span></span><span class="metric__caption">TOOLS FORENSIK</span></div>
+        <div class="metric"><span class="metric__value">03</span><span class="metric__caption">FITUR UNGGULAN</span></div>
+        <div class="metric"><span class="metric__value">24.04</span><span class="metric__caption">XUBUNTU LTS BASE</span></div>
+        <div class="metric"><span class="metric__value">04</span><span class="metric__caption">ANGGOTA TIM</span></div>
+      </div>
+    </section>
+
+    <section class="section about" id="tentang" aria-labelledby="about-heading">
+      <div class="container about__grid">
+        <div class="about__intro reveal">
+          <p class="section-kicker">[ 02 / OUR PURPOSE ]</p>
+          <h2 class="section-title" id="about-heading">Jejak digital tidak pernah <span class="accent-text">benar-benar hilang.</span></h2>
+          <div class="about__art" aria-hidden="true"><span>TRACE /trās/</span><pre>  +------------------------------------+
+  |  EVIDENCE FOUND                     |
+  |  .                                   |
+  |  +-- DISK IMAGE   [VERIFIED]         |
+  |  +-- METADATA     [EXTRACTED]        |
+  |  +-- NETWORK LOG  [ANALYZED]         |
+  |  '--- FIND THE STORY.                |
+  +------------------------------------+</pre></div>
+        </div>
+        <div class="about__body reveal">
+          <div class="eyebrow-number">01 — DEFINISI</div>
+          <h3>Apa itu TraceOS?</h3>
+          <p>Nama <strong>TraceOS</strong> berasal dari kata <em>trace</em>, yang berarti <strong>jejak</strong>—jejak digital yang ditinggalkan oleh aktivitas dalam sistem komputer. Jejak tersebut dapat menjadi petunjuk penting dalam proses investigasi.</p>
+          <div class="about__rule"></div>
+          <div class="eyebrow-number">02 — MISI</div>
+          <h3>Forensik digital yang lebih mudah diakses.</h3>
+          <p>Seiring meningkatnya kebutuhan investigasi kejahatan siber, TraceOS menyatukan perangkat analisis filesystem, pemulihan file, pemeriksaan metadata, dan investigasi jaringan ke dalam lingkungan Linux berbasis Xubuntu yang ramah untuk pembelajaran.</p>
+          <a class="text-link" href="#distro">Lihat fondasi distro <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="fitur" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div><p class="section-kicker">[ 03 / CAPABILITIES ]</p><h2 class="section-title" id="features-heading">Built to <span class="accent-text">investigate.</span></h2></div>
+          <p class="section-header__aside">Tiga kapabilitas utama untuk mengikuti alur investigasi digital, dari bukti hingga insight.</p>
+        </div>
+        <div class="features__grid">
+          <article class="feature-card reveal">
+            <div class="feature-card__top"><span class="feature-card__number">01 / EVIDENCE</span><span class="feature-card__arrow" aria-hidden="true">↗</span></div>
+            <div class="feature-card__graphic" aria-hidden="true"><div class="feature-card__icon">⌕</div><pre> /evidence
+ ├── disk_01.E01
+ ├── filesystem/
+ └── metadata.json
+      └─ [OK]</pre></div>
+            <h3>Digital Evidence<br>Analysis</h3>
+            <p>Analisis disk image, filesystem, dan metadata file untuk menemukan serta memahami barang bukti digital.</p>
+            <div class="feature-card__tags"><span>DISK IMAGE</span><span>FILESYSTEM</span><span>METADATA</span></div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__top"><span class="feature-card__number">02 / RECOVERY</span><span class="feature-card__arrow" aria-hidden="true">↗</span></div>
+            <div class="feature-card__graphic" aria-hidden="true"><div class="feature-card__icon">↺</div><pre> file_001.jpg    [FOUND]
+ file_002.pdf    [FOUND]
+ file_003.zip    [FOUND]
+ ---------------------
+ recovery  ███████░ 87%</pre></div>
+            <h3>Data Recovery &amp;<br>File Investigation</h3>
+            <p>Pulihkan file yang terhapus, telusuri partisi, dan identifikasi data tersembunyi melalui file carving.</p>
+            <div class="feature-card__tags"><span>RECOVERY</span><span>CARVING</span><span>PARTITIONS</span></div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__top"><span class="feature-card__number">03 / NETWORK</span><span class="feature-card__arrow" aria-hidden="true">↗</span></div>
+            <div class="feature-card__graphic" aria-hidden="true"><div class="feature-card__icon">⌁</div><pre> 10.0.0.2  ─┐  TCP / 443
+            ├─────────▶
+ 10.0.0.8  ─┘  PCAP
+ PACKET 092  [INSPECT]</pre></div>
+            <h3>Network<br>Forensics</h3>
+            <p>Investigasi lalu lintas jaringan dan file PCAP menggunakan Wireshark untuk memeriksa aktivitas mencurigakan.</p>
+            <div class="feature-card__tags"><span>WIRESHARK</span><span>PCAP</span><span>TRAFFIC</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section toolkit" id="tools" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div><p class="section-kicker">[ 04 / FORENSIC TOOLKIT ]</p><h2 class="section-title" id="tools-heading">Your toolkit.<br><span class="accent-text">Ready for evidence.</span></h2></div>
+          <p class="section-header__aside">Delapan tool utama untuk membantu analisis bukti digital. Pilih kategori untuk menjelajahi paket.</p>
+        </div>
+        <div class="toolkit__filter reveal" role="group" aria-label="Filter kategori tools">
+          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">Semua <span>08</span></button>
+          <button type="button" class="filter-button" data-filter="analysis" aria-pressed="false">Analisis</button>
+          <button type="button" class="filter-button" data-filter="recovery" aria-pressed="false">Recovery</button>
+          <button type="button" class="filter-button" data-filter="network" aria-pressed="false">Network</button>
+          <button type="button" class="filter-button" data-filter="metadata" aria-pressed="false">Metadata &amp; Binary</button>
+        </div>
+        <div class="tools-grid" id="toolsGrid">
+          <article class="tool-card reveal" data-category="analysis"><div class="tool-card__head"><span>01</span><span>ANALYSIS / GUI</span></div><div class="tool-card__glyph" aria-hidden="true">A_</div><h3>Autopsy</h3><p>Platform GUI untuk investigasi disk image, filesystem, dan barang bukti digital.</p><a href="https://www.autopsy.com/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi Autopsy (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="analysis"><div class="tool-card__head"><span>02</span><span>FILESYSTEM / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">TS</div><h3>The Sleuth Kit</h3><p>Kumpulan utilitas untuk memeriksa partisi, filesystem, dan disk image.</p><a href="https://www.sleuthkit.org/sleuthkit/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi The Sleuth Kit (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="network"><div class="tool-card__head"><span>03</span><span>NETWORK / GUI</span></div><div class="tool-card__glyph" aria-hidden="true">W↗</div><h3>Wireshark</h3><p>Inspeksi paket data, protokol, dan lalu lintas jaringan melalui file PCAP.</p><a href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi Wireshark (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="recovery"><div class="tool-card__head"><span>04</span><span>PARTITION / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">TD</div><h3>TestDisk</h3><p>Analisis struktur partisi dan bantuan pemulihan partisi yang hilang.</p><a href="https://www.cgsecurity.org/wiki/TestDisk" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi TestDisk (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="recovery"><div class="tool-card__head"><span>05</span><span>RECOVERY / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">PR</div><h3>PhotoRec</h3><p>Pemulihan file terhapus atau hilang berdasarkan tipe dan struktur data.</p><a href="https://www.cgsecurity.org/wiki/PhotoRec" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi PhotoRec (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="recovery"><div class="tool-card__head"><span>06</span><span>CARVING / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">F_</div><h3>Foremost</h3><p>Ekstraksi file dari raw data menggunakan header, footer, dan file signature.</p><a href="https://foremost.sourceforge.net/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi Foremost (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="metadata"><div class="tool-card__head"><span>07</span><span>METADATA / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">EX</div><h3>ExifTool</h3><p>Baca dan analisis metadata gambar, dokumen, serta beragam format file.</p><a href="https://exiftool.org/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi ExifTool (buka tab baru)">Explore tool ↗</a></article>
+          <article class="tool-card reveal" data-category="metadata"><div class="tool-card__head"><span>08</span><span>BINARY / CLI</span></div><div class="tool-card__glyph" aria-hidden="true">BW</div><h3>Binwalk</h3><p>Identifikasi struktur biner dan data tersembunyi di dalam file atau firmware.</p><a href="https://github.com/ReFirmLabs/binwalk" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi Binwalk (buka tab baru)">Explore tool ↗</a></article>
+        </div>
+        <p class="toolkit__note"><span aria-hidden="true">ⓘ</span> Nama dan merek tool adalah milik pengembang masing-masing. TraceOS mengintegrasikannya untuk kebutuhan belajar dan investigasi.</p>
+      </div>
+    </section>
+
+    <section class="section build" id="distro" aria-labelledby="build-heading">
+      <div class="container">
+        <div class="section-header reveal"><div><p class="section-kicker">[ 05 / UNDER THE HOOD ]</p><h2 class="section-title" id="build-heading">Familiar foundation.<br><span class="accent-text">Forensic focus.</span></h2></div><p class="section-header__aside">Dirancang untuk siswa SMK, mahasiswa IT, analis forensik digital, dan pemula yang ingin belajar investigasi.</p></div>
+        <div class="build__layout">
+          <div class="build__terminal reveal" aria-label="Contoh artwork ASCII terminal TraceOS">
+            <div class="window-chrome"><div class="window-dots"><i></i><i></i><i></i></div><span>traceos@xfce: ~/about</span><span>— □ ×</span></div>
+            <div class="build__terminal-body">
+              <p class="prompt-line"><span>traceos@xfce</span>:~$ cat /etc/traceos-release</p>
+              <pre class="build__ascii" aria-label="Logo teks ASCII TraceOS">  _____ ____      _    ____ _____ ___  ____
+ |_   _|  _ \    / \  / ___| ____/ _ \/ ___|
+   | | | |_) |  / _ \| |   |  _|| | | \___ \
+   | | |  _ <  / ___ \ |___| |__| |_| |___) |
+   |_| |_| \_\/_/   \_\____|_____\___/|____/</pre>
+              <div class="build__cmd-output"><span>NAME</span> TraceOS<br><span>EDITION</span> Digital Forensics<br><span>VERSION</span> 1.0 / Project Remaster<br><span>BASED_ON</span> Xubuntu 24.04 LTS<br><span>DESKTOP</span> XFCE<br><span>BUILD_TOOL</span> Cubic<br><span>MAINTAINER</span> TraceOS Team</div>
+              <p class="prompt-line"><span>traceos@xfce</span>:~$ <b class="blink-cursor">_</b></p>
+            </div>
+            <div class="build__terminal-foot">ILLUSTRASI TERMINAL · BUKAN OUTPUT SISTEM LANGSUNG</div>
+          </div>
+          <div class="build__specs reveal">
+            <div class="spec-row"><span class="spec-row__label">01 / BASE DISTRO</span><div><strong>Xubuntu 24.04 LTS</strong><small>Fondasi Ubuntu LTS yang ringan</small></div><span class="spec-row__arrow">↗</span></div>
+            <div class="spec-row"><span class="spec-row__label">02 / DESKTOP</span><div><strong>XFCE</strong><small>Lingkungan desktop efisien dan mudah digunakan</small></div><span class="spec-row__arrow">↗</span></div>
+            <div class="spec-row"><span class="spec-row__label">03 / REMASTER</span><div><strong>Cubic</strong><small>Penyesuaian paket, konfigurasi, dan image ISO</small></div><span class="spec-row__arrow">↗</span></div>
+            <div class="spec-row"><span class="spec-row__label">04 / FOCUS</span><div><strong>Digital Forensics</strong><small>Evidence analysis, data recovery, network investigation</small></div><span class="spec-row__arrow">↗</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ TIM ============ -->
-    <section class="section section--alt" id="tim">
-      <div class="container">
-        <header class="section__head">
-          <p class="eyebrow"><span class="dot"></span> Tim Remastering</p>
-          <h2 class="section__title">Yang Membangun TraceOS</h2>
-          <p class="section__sub">
-            Tim remastering TraceOS dari <strong>Universitas Negeri Semarang</strong>.
-          </p>
-        </header>
-
-        <div class="grid grid--4 team">
-          <article class="member member--lead">
-            <div class="member__avatar" aria-hidden="true">ZG</div>
-            <h3 class="member__name">Zukhruf Gustdika Cahyatullah</h3>
-            <p class="member__role">Head of Remastering</p>
-            <p class="member__desc">Memimpin arah pengembangan distro serta mengoordinasikan proses remastering secara keseluruhan.</p>
-          </article>
-          <article class="member">
-            <div class="member__avatar" aria-hidden="true">UK</div>
-            <h3 class="member__name">Umniyya Khazma</h3>
-            <p class="member__role">Tools &amp; Package Integration</p>
-            <p class="member__desc">Menyiapkan dan mengintegrasikan paket-paket forensik utama ke dalam sistem.</p>
-          </article>
-          <article class="member">
-            <div class="member__avatar" aria-hidden="true">AS</div>
-            <h3 class="member__name">Aisy Tsania Sadzakky</h3>
-            <p class="member__role">Desktop &amp; UI Customization</p>
-            <p class="member__desc">Menyesuaikan tampilan desktop XFCE serta pengalaman pengguna TraceOS.</p>
-          </article>
-          <article class="member">
-            <div class="member__avatar" aria-hidden="true">NP</div>
-            <h3 class="member__name">Natan Haryo Prastomo</h3>
-            <p class="member__role">Testing &amp; Documentation</p>
-            <p class="member__desc">Menguji fungsionalitas distro dan menyusun dokumentasi penggunaan.</p>
-          </article>
+    <section class="section showcase" id="preview" aria-labelledby="showcase-heading">
+      <div class="container showcase__grid">
+        <div class="showcase__copy reveal">
+          <p class="section-kicker">[ 06 / SEE TRACEOS ]</p>
+          <h2 class="section-title" id="showcase-heading">See the system.<br><span class="accent-text">Follow the evidence.</span></h2>
+          <p>Area ini disiapkan untuk <strong>screenshot desktop TraceOS</strong> dan <strong>video demonstrasi</strong>. Ketika dokumentasi final tersedia, konten dapat ditambahkan tanpa mengubah struktur website.</p>
+          <a href="#rilis" class="text-link">Lihat rencana rilis <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="showcase__placeholder reveal">
+          <div class="showcase__placeholder-top"><span><span class="live-dot"></span> PREVIEW / TRACEOS DESKTOP</span><span>16:9</span></div>
+          <div class="showcase__placeholder-mid"><div class="placeholder-icon" aria-hidden="true">▣</div><strong>Desktop Preview</strong><span>SCREENSHOT COMING SOON</span><small>Tempat screenshot XFCE asli, bukan mockup</small></div>
+          <div class="showcase__placeholder-bottom"><span>MEDIA_SLOT_001</span><span>[ AWAITING ASSET ]</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ UNDUH ============ -->
-    <section class="section" id="unduh">
+    <section class="section team" id="tim" aria-labelledby="team-heading">
       <div class="container">
-        <header class="section__head">
-          <p class="eyebrow"><span class="dot"></span> Unduh</p>
-          <h2 class="section__title">Dapatkan TraceOS</h2>
-          <p class="section__sub">
-            Berkas ISO dan video demo sedang disiapkan. Tautan akan tersedia di bagian ini.
-          </p>
-        </header>
-
-        <div class="grid grid--2 download">
-          <article class="dl-card">
-            <div class="dl-card__top">
-              <span class="dl-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 19h14"/></svg>
-              </span>
-              <div>
-                <h3>TraceOS ISO</h3>
-                <p class="dl-card__hint">Xubuntu 24.04 LTS · XFCE · amd64</p>
-              </div>
-            </div>
-            <p class="dl-card__desc">Citra instalasi TraceOS yang siap dijalankan sebagai live system atau dipasang ke perangkat.</p>
-            <span class="btn btn--primary is-disabled" aria-disabled="true">Segera Hadir</span>
-          </article>
-
-          <article class="dl-card">
-            <div class="dl-card__top">
-              <span class="dl-card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>
-              </span>
-              <div>
-                <h3>Video Demo</h3>
-                <p class="dl-card__hint">Panduan &amp; demonstrasi tools</p>
-              </div>
-            </div>
-            <p class="dl-card__desc">Video perkenalan TraceOS serta contoh penggunaan tools forensik di dalamnya.</p>
-            <span class="btn btn--outline is-disabled" aria-disabled="true">Segera Hadir</span>
-          </article>
+        <div class="section-header reveal"><div><p class="section-kicker">[ 07 / THE PEOPLE BEHIND TRACEOS ]</p><h2 class="section-title" id="team-heading">Made by <span class="accent-text">curious minds.</span></h2></div><p class="section-header__aside">Proyek remastering TraceOS oleh tim dari <strong>Universitas Negeri Semarang</strong>.</p></div>
+        <div class="team__lead reveal"><div class="team__lead-mark">ZG<span>.</span></div><div><span class="team__role">PROJECT LEAD / TEAM HEAD</span><h3>Zukhruf Gustdika Cahyatullah</h3><p>Koordinasi proyek, arah teknis remastering, dan integrasi hasil akhir.</p></div><span class="team__lead-index">01 / HEAD</span></div>
+        <div class="team__grid">
+          <article class="team-member reveal"><span class="team-member__number">02 / MEMBER</span><div class="team-member__initials">UK</div><h3>Umniyya Khazma</h3><p>Integrasi tools &amp; konfigurasi sistem</p></article>
+          <article class="team-member reveal"><span class="team-member__number">03 / MEMBER</span><div class="team-member__initials">AS</div><h3>Aisy Tsania Sadzakky</h3><p>Desain visual &amp; dokumentasi</p></article>
+          <article class="team-member reveal"><span class="team-member__number">04 / MEMBER</span><div class="team-member__initials">NP</div><h3>Natan Haryo Prastomo</h3><p>Pengujian ISO &amp; quality assurance</p></article>
         </div>
+        <p class="team__footnote">* Pembagian peran anggota merupakan rancangan awal dan dapat disesuaikan dengan kontribusi sebenarnya.</p>
+      </div>
+    </section>
 
-        <div class="notice">
-          <span class="notice__tag">Info</span>
-          <p>Bagian ini akan diperbarui dengan tautan ISO dan video segera setelah berkas tersedia.</p>
+    <section class="release" id="rilis" aria-labelledby="release-heading">
+      <div class="container release__inner">
+        <div class="release__copy reveal"><p class="section-kicker">[ 08 / GET TRACEOS ]</p><h2 id="release-heading">Ready to follow<br><span>the trace?</span></h2><p>TraceOS sedang dalam tahap penyempurnaan dokumentasi rilis. File ISO, checksum, dan video demonstrasi akan ditambahkan di sini setelah tersedia.</p></div>
+        <div class="release__panel reveal">
+          <div class="release__panel-head"><span><span class="live-dot"></span> RELEASE CHANNEL</span><span>TRACEOS / V1.0</span></div>
+          <div class="release__item"><div><span class="release__item-icon" aria-hidden="true">↓</span><div><strong>TraceOS ISO</strong><small>Installer / Live Image · amd64</small></div></div><span class="soon-badge">SEGERA</span></div>
+          <div class="release__item"><div><span class="release__item-icon" aria-hidden="true">▶</span><div><strong>Video Demonstrasi</strong><small>Desktop tour &amp; forensic workflow</small></div></div><span class="soon-badge">SEGERA</span></div>
+          <div class="release__item"><div><span class="release__item-icon" aria-hidden="true">#</span><div><strong>SHA-256 Checksum</strong><small>Verifikasi integritas file ISO</small></div></div><span class="soon-badge">SEGERA</span></div>
+          <p class="release__notice"><span aria-hidden="true">ⓘ</span> Tombol unduh belum diaktifkan karena file rilis belum dipublikasikan. Tidak ada tautan unduh palsu.</p>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a class="brand" href="#top">
-          <span class="brand__mark" aria-hidden="true">T</span>
-          <span class="brand__text">Trace<span class="accent">OS</span></span>
-        </a>
-        <p class="footer__tag">Jejak digital yang ditinggalkan aktivitas dalam sistem komputer.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Tautan footer">
-        <a href="#fitur">Fitur</a>
-        <a href="#tools">Tools</a>
-        <a href="#distro">Distro</a>
-        <a href="#tim">Tim</a>
-        <a href="#unduh">Unduh</a>
-      </nav>
-      <p class="footer__copy">
-        © <span id="year">2026</span> TraceOS · Universitas Negeri Semarang.<br />
-        Dibangun di atas Xubuntu 24.04 LTS · Dirilis di bawah semangat open source.
-      </p>
-    </div>
+    <div class="container footer__top"><div><a href="#beranda" class="footer__logo">trace<span>OS</span><small> _</small></a><p>Digital Forensics Linux<br>Every trace tells a story.</p></div><div class="footer__links"><div><span>EXPLORE</span><a href="#fitur">Fitur Unggulan</a><a href="#tools">Forensic Toolkit</a><a href="#distro">Tentang Distro</a></div><div><span>PROJECT</span><a href="#tim">Tim Remastering</a><a href="#preview">Preview</a><a href="https://github.com/roxtong1337/TraceOS" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
+    <div class="container footer__bottom"><span>© <span id="year">2026</span> TraceOS Team · Universitas Negeri Semarang</span><span>Independent educational remastering project · Not affiliated with Xubuntu or Kali Linux.</span></div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
