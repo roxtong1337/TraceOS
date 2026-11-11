@@ -6,6 +6,12 @@ Website resmi prototipe **TraceOS**: proyek remastering Linux berbasis **Xubuntu
 
 > "Every trace tells a story." — Nama TraceOS berasal dari *trace* (jejak), yaitu jejak digital yang ditinggalkan oleh aktivitas pada sistem komputer.
 
+## Identitas visual
+
+Logo resmi TraceOS menggunakan **siluet kucing yang tersusun dari angka biner 0 dan 1**, disediakan oleh tim TraceOS. Versi gambar yang dioptimalkan untuk website berada di `assets/img/traceos-binary-cat.svg`. Aset SVG tersebut membungkus citra WebP transparan agar ukuran unduhan ringan; gambar asli resolusi tinggi disimpan terpisah oleh pemilik.
+
+Logo digunakan sebagai ikon navigasi, artwork utama hero, favicon, dan elemen footer. Layout website terinspirasi struktur situs distro Linux profesional, dengan identitas TraceOS sendiri.
+
 ## Isi website
 
 - Hero dengan artwork sidik jari **ASCII** dan terminal konsep, bertema **cyber-green**.
@@ -35,6 +41,8 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
 └── assets
     ├── css/
     │   └── style.css
+    ├── img/
+    │   └── traceos-binary-cat.svg
     └── js/
         └── main.js
 ```
