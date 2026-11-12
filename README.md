@@ -17,11 +17,27 @@ Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer
 - Hero dengan artwork sidik jari **ASCII** dan terminal konsep, bertema **cyber-green**.
 - Penjelasan latar belakang TraceOS dan sasaran pengguna.
 - Tiga fitur utama: **Digital Evidence Analysis**, **Data Recovery & File Investigation**, dan **Network Forensics**.
-- Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori. Ikon vektor khusus menggambarkan fungsi/nama masing-masing, termasuk **anjing pelacak untuk Autopsy** dan **hiu untuk Wireshark**. Ikon tersebut adalah ilustrasi orisinal, bukan logo resmi tools.
+- Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori. Aset ikon untuk Autopsy, Wireshark, TestDisk, PhotoRec/QPhotoRec, dan ExifTool diambil dari proyek atau logo asli; untuk TSK, Foremost, dan Binwalk yang utamanya berbasis CLI ditampilkan identitas perintah, bukan logo rekaan.
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
 - Area khusus screenshot desktop dan video demo.
 - Tim remastering dari **Universitas Negeri Semarang**.
 - Area rilis untuk ISO, video, dan checksum (saat ini placeholder).
+
+
+## Asal aset ikon aplikasi
+
+Ikon tidak digambar ulang. Aset asli dipakai dari sumber berikut:
+
+| Tool | Asal icon |
+| --- | --- |
+| Autopsy | `sleuthkit/autopsy` — `icons/icon.ico` (ikon installer aplikasi) |
+| Wireshark | `wireshark/wireshark` — `resources/icons/wsicon256.png` |
+| TestDisk | `cgsecurity/testdisk` — `icons/testdisk.ico` |
+| PhotoRec | `cgsecurity/testdisk` — `icons/scalable/apps/qphotorec.svg`, disimpan di `assets/img/tools/photorec.svg` |
+| ExifTool | Wikimedia Commons — `ExifTool_logo.svg` |
+| The Sleuth Kit, Foremost, Binwalk | Identitas text perintah CLI; **bukan** diklaim sebagai ikon resmi aplikasi |
+
+Kredit dan lisensi mengikuti pemegang hak masing-masing: [Autopsy](https://github.com/sleuthkit/autopsy), [Wireshark](https://github.com/wireshark/wireshark), [TestDisk & PhotoRec](https://github.com/cgsecurity/testdisk), dan [ExifTool di Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ExifTool_logo.svg). PhotoRec/QPhotoRec dan Wireshark menggunakan lisensi GPL yang berlaku pada proyeknya. Penggunaan gambar merek tidak menyiratkan afiliasi.
 
 ## Anggota tim
 
@@ -44,7 +60,9 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
     │   └── kali-inspired.css
     ├── img/
     │   ├── traceos-cat.webp
-    │   └── traceos-binary-cat.svg
+    │   ├── traceos-binary-cat.svg
+    │   └── tools/
+    │       └── photorec.svg
     └── js/
         └── main.js
 ```
