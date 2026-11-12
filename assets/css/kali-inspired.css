@@ -776,3 +776,58 @@ body{
   .showcase__video-frame{aspect-ratio:16/9}
   .release__download-link{font-size:10px;padding:9px 10px}
 }
+
+/* TraceOS checksum is readable and copyable without a separate download */
+.release__item--checksum{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:14px;
+}
+.release__item--checksum>div:first-child{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.release__hash-wrap{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+  padding:10px 11px;
+  background:#071a11;
+  border:1px solid rgba(60,230,142,.24);
+  border-radius:5px;
+}
+.release__hash{
+  display:block;
+  min-width:0;
+  flex:1;
+  font:500 11px/1.8 var(--mono);
+  color:#b5f6d2;
+  overflow-wrap:anywhere;
+  word-break:break-all;
+  user-select:all;
+}
+.release__copy-hash{
+  flex-shrink:0;
+  border:1px solid rgba(60,230,142,.48);
+  border-radius:4px;
+  background:rgba(60,230,142,.09);
+  color:#a8f5ca;
+  padding:9px 12px;
+  font:700 11px/1 var(--body);
+  cursor:pointer;
+}
+.release__copy-hash:hover{
+  background:rgba(60,230,142,.19);
+}
+.release__copy-hash:focus-visible{
+  outline:2px solid #affbd3;
+  outline-offset:3px;
+}
+@media(max-width:650px){
+  .release__hash-wrap{align-items:flex-start;flex-direction:column;gap:9px}
+  .release__hash{font-size:10px}
+  .release__copy-hash{align-self:flex-end}
+}
