@@ -21,7 +21,7 @@ Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
 - Area khusus screenshot desktop dan video demo.
 - Tim remastering dari **Universitas Negeri Semarang**.
-- Area rilis untuk ISO, video, dan checksum (saat ini placeholder).
+- Area rilis dengan link unduhan ISO Google Drive; video dan checksum masih placeholder.
 
 
 ## Asal aset ikon aplikasi
@@ -89,12 +89,23 @@ Lalu kunjungi `http://localhost:8000`.
 
 Jangan menyebut visual konsep sebagai screenshot OS asli.
 
-## Menambahkan ISO dan checksum
+## Unduh TraceOS ISO
 
-1. Upload ISO ke **GitHub Releases** atau platform distribusi berkas lain yang sesuai. **Jangan** mengunggah ISO berukuran besar ke folder GitHub Pages.
-2. Hitung SHA-256 file rilis: `sha256sum TraceOS-1.0-amd64.iso`.
-3. Di bagian `#rilis` pada `index.html`, ganti badge **SEGERA** dengan tautan ke URL unduhan ISO asli.
-4. Tampilkan checksum SHA-256 yang sesuai dan anjurkan pengguna memverifikasi hasil download.
+Image ISO telah ditautkan oleh pemilik proyek melalui Google Drive:
+
+- [TraceOS ISO (Google Drive)](https://drive.google.com/file/d/1EM8UQKSuC7A5FiuAQG6gpsXBmgY6tTsr/view?usp=sharing)
+- Tautan ditampilkan di tombol utama **Download TraceOS** dan bagian **Get TraceOS** pada website.
+- Untuk mengunduh, buka halaman file lalu gunakan tombol **Download** di Google Drive.
+
+Catatan: akses publik, nama file aktual, dan integritas image belum diverifikasi secara independen. **Checksum SHA-256 belum diberikan**; perbarui bagian checksum setelah nilainya diketahui.
+
+Untuk membuat checksum dari ISO yang sesuai di Linux:
+
+```bash
+sha256sum nama-file-iso-sebenarnya.iso
+```
+
+Hindari mengunggah image ISO berukuran besar ke direktori GitHub Pages.
 
 ## Menambahkan video
 
