@@ -73,4 +73,31 @@
   // Keep content visible by default: no scroll-triggered opacity hiding.
   // This avoids empty-looking sections near the bottom of the viewport.
 
+
+  // Copy the published checksum without requiring a checksum file download.
+  var copyHashButton = document.getElementById("copySha256");
+  var shaText = document.getElementById("isoSha256");
+  if (copyHashButton && shaText) {
+    copyHashButton.addEventListener("click", function () {
+      var value = shaText.textContent.trim();
+      function feedback(success) {
+        copyHashButton.textContent = success ? "Tersalin ✓" : "Pilih hash";
+        if (!success) {
+          var selection = window.getSelection();
+          var range = document.createRange();
+          range.selectNodeContents(shaText);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+        window.setTimeout(function () { copyHashButton.textContent = "Salin"; }, 2400);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(function () { feedback(true); })
+          .catch(function () { feedback(false); });
+      } else {
+        feedback(false);
+      }
+    });
+  }
+
 })();
