@@ -2,6 +2,19 @@
 (function () {
   "use strict";
 
+  // Clean the optional ChatGPT referral marker from the URL shown in the browser.
+  // GitHub Pages itself does not add this parameter. Keep path, other query data
+  // and section hashes unchanged, without triggering a reload.
+  try {
+    var currentUrl = new URL(window.location.href);
+    if (currentUrl.searchParams.get("utm_source") === "chatgpt.com") {
+      currentUrl.searchParams.delete("utm_source");
+      window.history.replaceState(window.history.state, "", currentUrl.pathname + currentUrl.search + currentUrl.hash);
+    }
+  } catch (error) {
+    // URL cleanup is non-essential; never interrupt navigation.
+  }
+
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
