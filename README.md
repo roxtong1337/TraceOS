@@ -21,7 +21,7 @@ Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
 - Area video demo Google Drive; screenshot desktop asli masih bisa ditambahkan nanti.
 - Tim remastering dari **Universitas Negeri Semarang**.
-- Area rilis TraceOS Preview 11 dengan folder ISO & SHA-256 dan video demonstrasi Google Drive.
+- Area download ISO langsung ke file Google Drive beserta SHA-256 yang dapat disalin, serta video demonstrasi terpisah di section preview.
 
 
 ## Asal aset ikon aplikasi
@@ -89,24 +89,23 @@ Lalu kunjungi `http://localhost:8000`.
 
 Jangan menyebut visual konsep sebagai screenshot OS asli.
 
-## TraceOS Preview 11: ISO, checksum, dan video
+## ISO TraceOS dan SHA-256
 
-Rilis **TraceOS Preview 11** disediakan oleh pemilik proyek melalui folder Google Drive:
+File ISO dapat dibuka **langsung** melalui Google Drive:
 
-- **Folder ISO + SHA-256:** https://drive.google.com/drive/folders/11SZgdrPCVppIUZlc-VWg0TcM070B-gM9
-- **Video demonstrasi:** https://drive.google.com/file/d/1BWGWEy5H0eaR8F1bXqBo-ShHnGyxneP2/view?usp=sharing
+- [TraceOS ISO](https://drive.google.com/file/d/1PWAlVL4sjZrH3DiTZHpk1JsaAoBozLYM/view?usp=sharing)
+- **SHA-256 yang diberikan oleh pembuat proyek:** `3010ece235b707568c72cf31db02b2c589b2a8e2541e687d7613ba3cc1748f43`
+- [Video demonstrasi TraceOS](https://drive.google.com/file/d/1BWGWEy5H0eaR8F1bXqBo-ShHnGyxneP2/view?usp=sharing) ada di section **[06 / SEE TRACEOS]**, bukan di panel download.
 
-Tombol utama **Get TraceOS Preview 11** dan tombol ISO pada section **Get TraceOS** sekarang menuju folder rilis tersebut. Video disematkan dalam section **See TraceOS** melalui Google Drive `/preview`, dengan tautan alternatif untuk membuka video secara langsung.
+Tombol utama tetap bertuliskan **Get TraceOS** (tanpa embel-embel Preview 11). Panel **[08 / GET TRACEOS]** hanya berisi tombol **Download ISO** dan nilai SHA-256 yang bisa disalin. Nama rilis di panel masih boleh menyebut **Preview 11**.
 
-Berkas SHA-256 dilaporkan tersedia dalam folder yang sama dengan ISO, tetapi nilai hash dan akses file belum dapat diverifikasi langsung. Karena itu website menyediakan tautan **Lihat SHA-256** menuju folder, dan **tidak menampilkan nilai hash yang belum terkonfirmasi**.
-
-Setelah mengunduh ISO, cek hash lokal:
+Untuk memverifikasi integritas ISO yang sudah diunduh:
 
 ```bash
 sha256sum nama-file-iso-sebenarnya.iso
 ```
 
-Cocokkan nilainya dengan berkas checksum di folder. Pastikan folder dan video memakai akses **Anyone with the link / Viewer** jika ditujukan untuk publik. Jangan mengunggah ISO berukuran besar ke direktori GitHub Pages.
+Cocokkan output dengan nilai di atas. Checksum berasal dari pembuat distro, belum diverifikasi secara independen. Pastikan file Google Drive diberi izin akses publik jika ditujukan kepada semua pengunjung.
 
 ## Menambahkan video
 
