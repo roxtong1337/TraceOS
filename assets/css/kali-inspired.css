@@ -435,213 +435,128 @@ body{background:var(--bg);color:var(--text);letter-spacing:0}
   .tool-card__glyph svg{width:33px;height:33px}
 }
 
-/* TraceOS cyber-green forensic edition — final theme overrides */
+/* TraceOS typography & forensic hero
+   Noto Sans matches the primary webfont used on kali.org.
+   This keeps the calmer pre-neon slate/sage palette. */
 :root{
-  --bg:#081319;
-  --bg-deep:#060e14;
-  --surface:#0c1c22;
-  --surface-2:#12252a;
-  --surface-3:#17322c;
-  --line:rgba(61,234,148,.16);
-  --line-strong:rgba(61,234,148,.32);
-  --green:#4af5a0;
-  --green-strong:#29e68c;
-  --green-soft:#93f8bf;
-  --green-dim:#2cb975;
-  --green-glow:rgba(53,235,140,.16);
-  --text:#f0f8f2;
-  --muted:#aec5bb;
-  --muted-2:#81a596;
+  --body:'Noto Sans',Arial,sans-serif;
+  --display:'Noto Sans',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
-html{scroll-padding-top:83px}
-body{background:#081319;color:var(--text)}
-::selection{background:#35db88;color:#07130e}
-.section-kicker,.eyebrow-number{color:#4af5a0}
-.accent-text,.logo__text>span,.footer__logo span{color:#4af5a0}
-.live-dot{background:#3ae891;box-shadow:0 0 7px rgba(40,222,125,.22)}
-.site-header{background:#09181e;border-bottom:1px solid rgba(69,224,144,.18)}
-.site-header.is-scrolled{background:#08151b}
-.logo__text small{color:#8dc4a7}
-.logo__symbol img{filter:brightness(1.05) saturate(.98)}
-.nav-links{color:#d6ede1}
-.nav-links>a:not(.nav-download):hover{color:#4af5a0}
-.nav-download{background:#35db88;border-color:#35db88;color:#05150c}
-.nav-download:hover{background:#80f6b5;border-color:#80f6b5;color:#05150c}
+body{
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.nav-links{font-family:var(--body);font-weight:600;font-size:13px}
+.logo__text{font-family:var(--display);font-weight:800;letter-spacing:-.035em}
+.hero h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(38px,3.6vw,54px);
+  letter-spacing:-.033em;
+  line-height:1.16;
+}
+.hero__headline-accent{color:#90bba2}
+.hero__subtitle{font-family:var(--body);font-weight:500;letter-spacing:-.016em;line-height:1.48}
+.hero__description{font-family:var(--body);font-size:15px;line-height:1.85}
+.section-title{
+  font-family:var(--display);
+  font-weight:700;
+  letter-spacing:-.027em;
+  line-height:1.17;
+}
+.about__body h3,.feature-card h3,.tool-card h3,.spec-row strong,.team__lead h3,.team-member h3,.release__copy h2{
+  font-family:var(--display);
+  letter-spacing:-.025em;
+}
+.feature-card p,.tool-card p,.about__body p,.showcase__copy p:not(.section-kicker),.release__copy>p:not(.section-kicker){font-family:var(--body);line-height:1.8}
+.button,.filter-button,.nav-download{font-family:var(--body);font-weight:700}
+.button{letter-spacing:0}
+.metric__value{font-family:var(--display);font-weight:700}
+.section-kicker,.eyebrow-number,.hero__facts,.scanner,.window-chrome,.build__terminal,.tool-card__head,.team__role{font-family:var(--mono)}
 
-/* The cat stays in the navbar/favicon. Hero returns to a forensic console. */
-.hero{
-  background:
-    radial-gradient(ellipse at 25% 55%,rgba(16,99,61,.14),transparent 46%),
-    linear-gradient(112deg,#0b1f22 0%,#09171d 58%,#07121a 100%);
-  border-color:rgba(63,230,139,.17)
-}
-.hero__grid{opacity:.2;background-size:72px 72px}
-.hero__inner{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:5%;min-height:580px;padding:72px 0 66px}
-.hero__visual{order:1;max-width:600px}
+/* Forensic terminal visual replacing the former oversized cat.
+   Subdued slate/sage, aligned with the previous version. */
+.hero__visual{order:1;max-width:615px}
 .hero__content{order:2}
-.hero__kicker{color:#4af5a0}
-.kicker-line{background:#4af5a0}
-.hero__headline-accent{color:#66efa4}
-.hero__subtitle{color:#dbece1}
-.hero__description{color:#bbd2c6}
-.hero__facts b{color:#47d08b}
-.button--primary{background:#39df8e;border-color:#39df8e;color:#061b12}
-.button--primary:hover{background:#83f8b5;border-color:#83f8b5}
-.button--secondary{border-color:rgba(72,225,143,.42);color:#d9f5e5}
-.button--secondary:hover{border-color:#47e29a;background:rgba(50,228,133,.08)}
-.hero__bottom{color:#7fad99}
-.hero__bottom>span:first-child{color:#8bdaa8}
+.hero__inner{grid-template-columns:minmax(0,.99fr) minmax(0,1.06fr);gap:5%}
 .scanner{
-  border:1px solid rgba(69,235,146,.3);
-  background:#07150f;
-  box-shadow:0 19px 64px rgba(0,0,0,.22),0 0 35px rgba(37,222,113,.035);
+  border:1px solid #496657;
+  background:#13251f;
+  box-shadow:0 22px 54px rgba(0,0,0,.19);
 }
-.scanner::before{border-color:rgba(70,231,146,.055)}
-.scanner__top{background:#10251c;border-bottom:1px solid rgba(63,236,148,.21);color:#b1d7bd}
-.scanner__top>span:first-child{color:#bdf5d0}
-.scanner__top-right{color:#6c9b7f}
+.scanner::before{border-color:rgba(158,207,170,.065)}
+.scanner__top{background:#203a30;color:#bbd3c1;border-color:#405f4e}
+.scanner__top>span:first-child{color:#d9efe0}
+.scanner__top-right{color:#8eac97}
 .scanner__field{
-  min-height:335px;
-  background:radial-gradient(circle at center,rgba(44,146,82,.12),transparent 60%),repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(79,245,145,.012) 5px),linear-gradient(90deg,rgba(49,231,126,.04) 1px,transparent 1px),linear-gradient(rgba(49,231,126,.04) 1px,transparent 1px);
+  min-height:330px;
+  background:
+    radial-gradient(circle at center,rgba(102,158,115,.12),transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(138,187,151,.012) 5px),
+    linear-gradient(90deg,rgba(155,195,163,.04) 1px,transparent 1px),
+    linear-gradient(rgba(155,195,163,.04) 1px,transparent 1px);
   background-size:auto,auto,29px 29px,29px 29px;
 }
-.scanner__ring{width:262px;height:262px;opacity:.6}
-.fingerprint{font-size:clamp(10px,1.06vw,13px);color:#47e895;text-shadow:0 0 9px rgba(73,238,139,.15)}
-.scanner__beam{height:1px;box-shadow:0 0 9px rgba(48,221,126,.25);opacity:.55}
-.scanner__terminal{background:#07140f;color:#a3c8ae;border-color:rgba(66,238,149,.17);font-size:10px}
-.terminal-muted{color:#55b781}
-.terminal-strong{color:#d3ffe0}
-.terminal-ok{color:#4af5a0}
-.scanner__bottom{background:#10251a;border-color:rgba(58,226,130,.13);color:#a7d6b4}
-.scanner__bottom b{color:#49e995}
-.visual-side-label{color:#4c956b}
+.scanner__ring{width:264px;height:264px;border-color:rgba(151,191,160,.16)}
+.fingerprint{
+  color:#8bbd99;
+  font-size:clamp(10px,1.06vw,13px);
+  text-shadow:0 0 10px rgba(127,175,141,.15);
+}
+.scanner__beam{background:linear-gradient(90deg,transparent,#a5cbb0,transparent);box-shadow:0 0 8px rgba(135,181,148,.22);height:1px;opacity:.45}
+.scanner__terminal{background:#11201b;color:#b2c8b8;border-color:#375446;font-size:10px}
+.terminal-muted{color:#86ad94}
+.terminal-strong{color:#e5f4e7}
+.terminal-ok{color:#a9d5b5}
+.scanner__bottom{background:#1d352a;color:#a5c1aa;border-color:#385746}
+.scanner__bottom b{color:#9acba7}
+.visual-side-label{color:#819c8b}
+.logo__symbol img{filter:brightness(.88) saturate(.65)}
+.footer__cat-logo{filter:brightness(.75) saturate(.65)}
 
-/* Section backgrounds remain cool/dark; green becomes the single accent. */
-.metrics{background:#102328}
-.metric{border-color:rgba(82,230,154,.12)}
-.metric__value span{color:#52ee9d}
-.metric__caption{color:#92cbb0}
-.about,.toolkit,.showcase{background:#09171e}
-.about__art>span{background:#143226;color:#6ff3a7;border-color:#235c3b}
-.about__art pre{color:#58c187}
-.about__body p{color:#b5cec3}
-.about__rule{background:rgba(60,226,144,.17)}
-.text-link{color:#66f3a7;border-bottom-color:#3acb80}
-.text-link:hover{color:#b2ffd1}
-.features,.build,.team{background:#102128;border-color:rgba(77,235,152,.13)}
-.feature-card{
-  background:#11252a;
-  border-color:#21433b;
-}
-.feature-card:hover{border-color:#42cc87}
-.feature-card__top,.feature-card__arrow{color:#6feba5}
-.feature-card__graphic{
-  background:linear-gradient(160deg,#0a1d20,#102c26);
-  border-color:#26533c;
-}
-.feature-card__graphic pre{color:#68f0a1}
-.feature-card h3,.tool-card h3{color:#effbf3}
-.feature-card p{color:#b3d0bf}
-.feature-card__tags span{border-color:#2a6445;background:#16352a;color:#8cf4b3}
-.filter-button{background:#11252a;border-color:#29473d;color:#bed6c8}
-.filter-button span{color:#80bf98}
-.filter-button:hover{border-color:#4bef9e;color:#edfef4}
-.filter-button.is-active{background:#39db8b;border-color:#39db8b;color:#062013}
-.filter-button.is-active span{color:#185334}
-.tool-card{
-  background:#10232a;
-  border-color:#254139;
-}
-.tool-card:hover{background:#15352d;border-color:#40d78a}
-.tool-card__head{color:#9cc4aa}
-.tool-card__head span:first-child{color:#67eea3}
+/* Branded toolkit icons remain legible with restrained accent color */
 .tool-card__glyph{
-  width:76px;height:76px;
-  margin:23px 0 20px;
-  border:1px solid rgba(63,229,133,.24);
-  border-radius:12px;
-  background:linear-gradient(135deg,#123628,#102720);
-  color:#61ee9e;
-  box-shadow:inset 0 0 20px rgba(43,194,115,.025);
+  width:76px;
+  height:76px;
+  border-radius:11px;
+  border-color:#425c4a;
+  background:linear-gradient(145deg,#293e32,#23342c);
+  color:#a7c9b3;
 }
-.tool-card__glyph svg,.tool-card__glyph .tool-brand-icon{
-  width:47px;height:47px;
-  display:block;
-  color:inherit;
-  stroke:currentColor;
-  overflow:visible;
-}
-.tool-card:hover .tool-card__glyph{
-  background:#184934;
-  color:#96ffc6;
-  border-color:#48e49a;
-}
-.tool-card p{color:#afc9bd}
-.tool-card>a{color:#6bf2a9}
-.toolkit__note{color:#87aa98}
-.build__terminal{border-color:#2b6946;background:#071a16}
-.window-chrome{background:#153026;border-color:#2e6244}
-.build__terminal-body{background:#071714}
-.build__ascii{color:#55e997}
-.prompt-line span,.build__cmd-output span{color:#5dee9e}
-.spec-row{border-color:#2c4d40}
-.spec-row__label,.spec-row__arrow{color:#5adf99}
-.showcase__placeholder{border-color:#306648;background:#102c25}
-.showcase__placeholder-top,.showcase__placeholder-bottom{background:#15372b}
-.showcase__placeholder-mid{background:linear-gradient(130deg,#0c2725,#0a1b20)}
-.placeholder-icon,.showcase__placeholder-mid span{color:#63eaa0}
-.team__lead{background:#13352a;border-color:#337e4e}
-.team__lead-mark{background:#194735;border-color:#438a5d;color:#8cf9b1}
-.team__role{color:#73ecaa}
-.team-member{background:#132c30;border-color:#2c5447}
-.team-member__initials{background:#184b36;border-color:#327850;color:#89f5b3}
-.release{background:linear-gradient(120deg,#0e3428,#0b211e);border-color:#23774c}
-.release__copy h2 span{color:#84ffb9}
-.release__panel{background:#0b241e;border-color:#2f6c4a}
-.release__panel-head{background:#143c2d;color:#adf2c8}
-.release__item{border-color:#28563b}
-.release__item-icon{border-color:#31794f;color:#79f9aa}
-.soon-badge{background:#1b4834;border-color:#367f55;color:#91ffc0}
-.footer{background:#071318}
-.footer__logo span{color:#57eb99}
-.footer__cat-logo{filter:brightness(1) saturate(.85)}
-.footer__links>div>span,.footer__links a:hover{color:#6fe9a1}
-.footer__bottom{border-color:#24463a}
-
-/* Device layout for the restored console */
+.tool-card__glyph .tool-brand-icon{width:47px;height:47px;display:block;color:inherit;stroke:currentColor}
+.tool-card:hover .tool-card__glyph{background:#31473a;border-color:#73937f;color:#c0dfca}
 @media(max-width:1120px){
- .hero__inner{min-height:540px}
- .scanner__field{min-height:310px}
- .fingerprint{font-size:11px}
+  .scanner__field{min-height:302px}
+  .fingerprint{font-size:11px}
 }
 @media(max-width:900px){
- .site-header{height:70px}
- .nav-links{top:70px;background:#0c2221;border-color:#276247}
- .nav-links .nav-download{background:#3de190;border-color:#3de190;color:#082015}
- .menu-toggle{background:#0e2b24;border-color:#387550}
- .menu-toggle span{background:#65f4aa}
- .hero__inner{grid-template-columns:1fr;gap:40px;padding:63px 0 58px}
- .hero__content{order:1}
- .hero__visual{order:2;max-width:630px;justify-self:center}
- .scanner__field{min-height:350px}
- .fingerprint{font-size:clamp(11px,2.05vw,14px)}
+  .hero__inner{grid-template-columns:1fr;gap:38px}
+  .hero__content{order:1}
+  .hero__visual{order:2;max-width:630px;justify-self:center}
+  .scanner__field{min-height:340px}
+  .fingerprint{font-size:clamp(11px,2.05vw,14px)}
 }
 @media(max-width:650px){
- .site-header{height:68px}
- .nav-links{top:68px}
- .hero__inner{gap:39px;padding:51px 0 43px}
- .scanner__field{min-height:292px}
- .fingerprint{font-size:clamp(9px,2.42vw,13px)}
- .scanner__ring{width:225px;height:225px}
- .scanner__terminal{font-size:9px;white-space:nowrap;overflow-x:auto}
- .scanner__bottom{font-size:7px;padding:11px 10px}
- .visual-side-label{display:none}
- .tool-card__glyph{width:62px;height:62px;border-radius:10px}
- .tool-card__glyph svg,.tool-card__glyph .tool-brand-icon{width:40px;height:40px}
+  .hero h1{font-size:clamp(34px,8vw,49px);line-height:1.18}
+  .section-title{font-size:clamp(35px,8vw,48px)}
+  .hero__inner{gap:36px}
+  .scanner__field{min-height:285px}
+  .fingerprint{font-size:clamp(9px,2.42vw,13px)}
+  .scanner__ring{width:225px;height:225px}
+  .scanner__terminal{font-size:9px;white-space:nowrap;overflow-x:auto}
+  .scanner__bottom{font-size:7px;padding:11px 10px}
+  .visual-side-label{display:none}
+  .tool-card__glyph{width:62px;height:62px;border-radius:9px}
+  .tool-card__glyph .tool-brand-icon{width:40px;height:40px}
 }
 @media(max-width:375px){
- .scanner__field{min-height:270px}
- .fingerprint{font-size:8.8px}
- .tool-card__glyph{width:65px;height:65px}
- .tool-card__glyph svg,.tool-card__glyph .tool-brand-icon{width:43px;height:43px}
+  .hero h1{font-size:32px}
+  .scanner__field{min-height:264px}
+  .fingerprint{font-size:8.7px}
+  .tool-card__glyph{width:65px;height:65px}
+  .tool-card__glyph .tool-brand-icon{width:43px;height:43px}
 }
