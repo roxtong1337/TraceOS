@@ -705,3 +705,37 @@ body{
   .about__body{padding-top:0}
   .about__art{margin-top:18px}
 }
+
+
+/* TraceOS ISO download CTA */
+.release__download-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  flex-shrink:0;
+  padding:11px 15px;
+  border:1px solid #3ce68e;
+  border-radius:4px;
+  color:#07130d;
+  background:#3ce68e;
+  font:700 12px/1.25 var(--body);
+  text-decoration:none;
+  transition:background-color .2s ease,border-color .2s ease;
+  white-space:nowrap;
+}
+.release__download-link:hover{
+  background:#8af5bb;
+  border-color:#8af5bb;
+}
+.release__download-link:focus-visible{
+  outline:2px solid #d5ffe5;
+  outline-offset:3px;
+}
+@media(max-width:650px){
+  .release__download-link{padding:9px 11px;font-size:11px;gap:5px}
+}
+@media(max-width:380px){
+  .release__item{flex-wrap:wrap}
+  .release__download-link{margin-left:54px}
+}
