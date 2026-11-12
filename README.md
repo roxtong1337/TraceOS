@@ -19,9 +19,9 @@ Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer
 - Tiga fitur utama: **Digital Evidence Analysis**, **Data Recovery & File Investigation**, dan **Network Forensics**.
 - Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori. Aset ikon untuk Autopsy, Wireshark, TestDisk, PhotoRec/QPhotoRec, dan ExifTool diambil dari proyek atau logo asli; untuk TSK, Foremost, dan Binwalk yang utamanya berbasis CLI ditampilkan identitas perintah, bukan logo rekaan.
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
-- Area khusus screenshot desktop dan video demo.
+- Area video demo Google Drive; screenshot desktop asli masih bisa ditambahkan nanti.
 - Tim remastering dari **Universitas Negeri Semarang**.
-- Area rilis dengan link unduhan ISO Google Drive; video dan checksum masih placeholder.
+- Area rilis TraceOS Preview 11 dengan folder ISO & SHA-256 dan video demonstrasi Google Drive.
 
 
 ## Asal aset ikon aplikasi
@@ -89,23 +89,24 @@ Lalu kunjungi `http://localhost:8000`.
 
 Jangan menyebut visual konsep sebagai screenshot OS asli.
 
-## Unduh TraceOS ISO
+## TraceOS Preview 11: ISO, checksum, dan video
 
-Image ISO telah ditautkan oleh pemilik proyek melalui Google Drive:
+Rilis **TraceOS Preview 11** disediakan oleh pemilik proyek melalui folder Google Drive:
 
-- [TraceOS ISO (Google Drive)](https://drive.google.com/file/d/1EM8UQKSuC7A5FiuAQG6gpsXBmgY6tTsr/view?usp=sharing)
-- Tautan ditampilkan di tombol utama **Download TraceOS** dan bagian **Get TraceOS** pada website.
-- Untuk mengunduh, buka halaman file lalu gunakan tombol **Download** di Google Drive.
+- **Folder ISO + SHA-256:** https://drive.google.com/drive/folders/11SZgdrPCVppIUZlc-VWg0TcM070B-gM9
+- **Video demonstrasi:** https://drive.google.com/file/d/1BWGWEy5H0eaR8F1bXqBo-ShHnGyxneP2/view?usp=sharing
 
-Catatan: akses publik, nama file aktual, dan integritas image belum diverifikasi secara independen. **Checksum SHA-256 belum diberikan**; perbarui bagian checksum setelah nilainya diketahui.
+Tombol utama **Get TraceOS Preview 11** dan tombol ISO pada section **Get TraceOS** sekarang menuju folder rilis tersebut. Video disematkan dalam section **See TraceOS** melalui Google Drive `/preview`, dengan tautan alternatif untuk membuka video secara langsung.
 
-Untuk membuat checksum dari ISO yang sesuai di Linux:
+Berkas SHA-256 dilaporkan tersedia dalam folder yang sama dengan ISO, tetapi nilai hash dan akses file belum dapat diverifikasi langsung. Karena itu website menyediakan tautan **Lihat SHA-256** menuju folder, dan **tidak menampilkan nilai hash yang belum terkonfirmasi**.
+
+Setelah mengunduh ISO, cek hash lokal:
 
 ```bash
 sha256sum nama-file-iso-sebenarnya.iso
 ```
 
-Hindari mengunggah image ISO berukuran besar ke direktori GitHub Pages.
+Cocokkan nilainya dengan berkas checksum di folder. Pastikan folder dan video memakai akses **Anyone with the link / Viewer** jika ditujukan untuk publik. Jangan mengunggah ISO berukuran besar ke direktori GitHub Pages.
 
 ## Menambahkan video
 
