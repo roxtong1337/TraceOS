@@ -653,3 +653,55 @@ body{
   }
   .tool-cli-mark{font-size:8px}
 }
+
+
+/* Continuous section flow: the About heading begins immediately after metrics.
+   Never hide sections behind scroll observers. */
+.js-motion .reveal,
+.js-motion .reveal.in-view,
+.reveal{
+  opacity:1;
+  transform:none;
+  transition:none;
+}
+.metrics + .about{
+  padding-top:0;
+  padding-bottom:55px;
+}
+.metrics + .about > .container{
+  padding-top:17px;
+}
+.about__grid{
+  align-items:start;
+  gap:5%;
+}
+.about__intro,
+.about__body{
+  opacity:1;
+  transform:none;
+}
+.about .section-kicker{margin-bottom:10px}
+.about .section-title{
+  font-size:clamp(33px,3.35vw,46px);
+  line-height:1.13;
+  max-width:600px;
+}
+.about__body{
+  padding-top:6px;
+}
+.about__art{
+  margin-top:24px;
+}
+@media (max-width:900px){
+  .metrics + .about{padding-top:0;padding-bottom:48px}
+  .metrics + .about > .container{padding-top:16px}
+  .about__grid{gap:30px}
+}
+@media (max-width:650px){
+  .metrics + .about{padding-top:0;padding-bottom:42px}
+  .metrics + .about > .container{padding-top:14px}
+  .about__grid{gap:22px}
+  .about .section-title{font-size:clamp(32px,8vw,43px)}
+  .about__body{padding-top:0}
+  .about__art{margin-top:18px}
+}
