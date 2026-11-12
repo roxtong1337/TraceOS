@@ -10,14 +10,14 @@ Website resmi prototipe **TraceOS**: proyek remastering Linux berbasis **Xubuntu
 
 Logo resmi TraceOS menggunakan **siluet kucing yang tersusun dari angka biner 0 dan 1**, disediakan oleh tim TraceOS. Gambar transparan yang dioptimalkan untuk website berada di `assets/img/traceos-cat.webp`. File SVG lama tetap disimpan sebagai arsip. Gambar asli resolusi tinggi disimpan terpisah oleh pemilik.
 
-Logo digunakan sebagai ikon navigasi, artwork utama hero, favicon, dan elemen footer. Layout website terinspirasi halaman utama distro Linux seperti Kali: logo besar di kiri, penjelasan dan tombol utama di kanan, serta section fitur dan daftar tool. Warna hijau sengaja dibuat lebih lembut (sage/forest green) agar tidak terlalu neon. Identitas visual tetap milik TraceOS.
+Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer—**tidak lagi ditampilkan besar pada hero**. Hero memakai ilustrasi terminal dan sidik jari ASCII untuk tema forensik digital. Tata letak situs terinspirasi situs distro Linux profesional seperti Kali Linux, tetapi dengan identitas TraceOS sendiri dan aksen **cyber green** yang tidak mendominasi seluruh bidang.
 
 ## Isi website
 
 - Hero dengan artwork sidik jari **ASCII** dan terminal konsep, bertema **cyber-green**.
 - Penjelasan latar belakang TraceOS dan sasaran pengguna.
 - Tiga fitur utama: **Digital Evidence Analysis**, **Data Recovery & File Investigation**, dan **Network Forensics**.
-- Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori.
+- Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori. Ikon vektor khusus menggambarkan fungsi/nama masing-masing, termasuk **anjing pelacak untuk Autopsy** dan **hiu untuk Wireshark**. Ikon tersebut adalah ilustrasi orisinal, bukan logo resmi tools.
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
 - Area khusus screenshot desktop dan video demo.
 - Tim remastering dari **Universitas Negeri Semarang**.
