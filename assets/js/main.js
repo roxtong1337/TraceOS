@@ -57,17 +57,7 @@
     });
   });
 
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var elements = document.querySelectorAll(".reveal");
-    document.documentElement.classList.add("js-motion");
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px 60px 0px", threshold: 0.06 });
-    elements.forEach(function (element) { observer.observe(element); });
-  }
+  // Keep content visible by default: no scroll-triggered opacity hiding.
+  // This avoids empty-looking sections near the bottom of the viewport.
+
 })();
