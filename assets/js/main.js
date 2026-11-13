@@ -100,4 +100,67 @@
     });
   }
 
+
+  // Non-blocking page progress and active navigation; no content is hidden.
+  var progressBar = document.getElementById("scrollProgress");
+  var backTop = document.getElementById("backToTop");
+  var pageLinks = nav ? Array.from(nav.querySelectorAll('a[href^="#"]:not(.nav-download)')) : [];
+  var sections = pageLinks.map(function (link) {
+    return { link: link, section: document.getElementById(link.getAttribute("href").slice(1)) };
+  }).filter(function (item) { return !!item.section; });
+  var scrollQueued = false;
+
+  function refreshScrollUI() {
+    var root = document.documentElement;
+    var maxScroll = Math.max(1, root.scrollHeight - window.innerHeight);
+    var ratio = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+    if (progressBar) progressBar.style.transform = "scaleX(" + ratio.toFixed(4) + ")";
+    if (backTop) backTop.classList.toggle("is-visible", window.scrollY > 600);
+
+    var threshold = window.scrollY + (header ? header.offsetHeight : 75) + 115;
+    var currentSection = "";
+    sections.forEach(function (item) {
+      if (item.section.offsetTop <= threshold) currentSection = item.section.id;
+    });
+    sections.forEach(function (item) {
+      if (item.section.id === currentSection) item.link.setAttribute("aria-current", "location");
+      else item.link.removeAttribute("aria-current");
+    });
+  }
+  function queueScrollUI() {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    window.requestAnimationFrame(function () {
+      scrollQueued = false;
+      refreshScrollUI();
+    });
+  }
+  refreshScrollUI();
+  window.addEventListener("scroll", queueScrollUI, { passive: true });
+  window.addEventListener("resize", queueScrollUI);
+  window.addEventListener("load", queueScrollUI);
+
+  // The filter count is always based on cards currently visible to the user.
+  var toolResult = document.getElementById("toolResult");
+  if (toolResult) {
+    var toolCountText = toolResult.querySelector("strong");
+    var categoryNames = {
+      all: "dalam semua kategori",
+      analysis: "kategori Analisis",
+      recovery: "kategori Recovery",
+      network: "kategori Network",
+      metadata: "kategori Metadata & Binary"
+    };
+    filters.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var category = button.getAttribute("data-filter");
+        var count = Array.from(tools).filter(function (card) { return !card.hidden; }).length;
+        if (toolCountText) toolCountText.textContent = String(count);
+        if (toolResult.lastChild && toolResult.lastChild.nodeType === 3) {
+          toolResult.lastChild.textContent = " tool forensik " + (categoryNames[category] || "yang dipilih") + ".";
+        }
+      });
+    });
+  }
+
 })();
