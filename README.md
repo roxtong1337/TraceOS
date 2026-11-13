@@ -17,11 +17,13 @@ Logo kucing biner dipakai sebagai identitas kecil di navbar, favicon, dan footer
 - Hero dengan artwork sidik jari **ASCII** dan terminal konsep, bertema **cyber-green**.
 - Penjelasan latar belakang TraceOS dan sasaran pengguna.
 - Tiga fitur utama: **Digital Evidence Analysis**, **Data Recovery & File Investigation**, dan **Network Forensics**.
+- Alur investigasi ringkas **Kumpulkan → Analisis → Catat temuan** di bagian fitur, sebagai panduan pembelajaran (bukan klaim otomatisasi).
 - Delapan tools: **Autopsy**, **The Sleuth Kit**, **Wireshark**, **TestDisk**, **PhotoRec**, **Foremost**, **ExifTool**, dan **Binwalk**. Tersedia filter berdasarkan kategori. Aset ikon untuk Autopsy, Wireshark, TestDisk, PhotoRec/QPhotoRec, dan ExifTool diambil dari proyek atau logo asli; untuk TSK, Foremost, dan Binwalk yang utamanya berbasis CLI ditampilkan identitas perintah, bukan logo rekaan.
 - Spesifikasi remastering: Xubuntu 24.04 LTS, XFCE, Cubic.
 - Area video demo Google Drive; screenshot desktop asli masih bisa ditambahkan nanti.
 - Tim remastering dari **Universitas Negeri Semarang**.
 - Area download ISO langsung ke file Google Drive beserta SHA-256 yang dapat disalin, serta video demonstrasi terpisah di section preview.
+- Navigasi aktif berdasarkan section, indikator progres scroll, tombol kembali ke atas, dan filter Toolkit dengan jumlah hasil.
 
 
 ## Asal aset ikon aplikasi
@@ -57,7 +59,8 @@ Peran anggota 2–4 merupakan **rancangan awal** untuk prototipe; sesuaikan sete
 └── assets
     ├── css/
     │   ├── style.css
-    │   └── kali-inspired.css
+    │   ├── kali-inspired.css
+    │   └── traceos-polish.css
     ├── img/
     │   ├── traceos-cat.webp
     │   ├── traceos-binary-cat.svg
@@ -107,11 +110,21 @@ sha256sum nama-file-iso-sebenarnya.iso
 
 Cocokkan output dengan nilai di atas. Checksum berasal dari pembuat distro, belum diverifikasi secara independen. Pastikan file Google Drive diberi izin akses publik jika ditujukan kepada semua pengunjung.
 
-## Menambahkan video
+## Memperbarui video demonstrasi
 
-1. Upload video demo ke YouTube atau penyedia video yang digunakan.
-2. Ganti item "Video Demonstrasi" di bagian `#rilis` menjadi tautan video, atau sisipkan embed pada area preview.
-3. Jika menggunakan iframe, sertakan `title` dan `loading="lazy"`.
+Video sekarang disematkan dalam section `#preview` (**See TraceOS**) lewat iframe Google Drive. Untuk mengganti video, perbarui URL iframe `/preview` dan kedua tautan yang membuka halaman video. Pastikan izin akses video sudah publik. Video tidak diulang di panel unduhan.
+
+## Referensi desain dan implementasi
+
+Redesign UI TraceOS menggunakan bahasa visual *editorial dark-cyber*, dengan tipografi **Noto Sans**, nuansa **hijau** (bukan biru), ilustrasi forensik orisinal berbasis ASCII/CSS, dan jarak section yang rapat namun lega.
+
+- **Kali Linux** ([kali.org](https://www.kali.org/) dan [Get Kali](https://www.kali.org/get-kali/)): penyajian kemampuan distro, navigasi toolkit, serta informasi rilis
+- **Parrot Security** ([parrotsec.org](https://parrotsec.org/)): pendekatan identitas visual cybersecurity yang kuat
+- **Fedora Workstation** ([fedoraproject.org/workstation](https://fedoraproject.org/workstation/download/)): CTA unduhan dan langkah verifikasi ISO/SHA-256 yang mudah ditemukan
+
+Ini adalah **referensi prinsip desain**, bukan menyalin elemen grafis atau kode situs lain. Identitas TraceOS, logo biner, aset resmi tool, link ISO, dan disclaimer visualisasi konsep tetap dipertahankan.
+
+File `assets/css/traceos-polish.css` adalah lapisan desain baru yang dimuat terakhir setelah `style.css` dan `kali-inspired.css`. Gunakan file ini untuk perbaikan antarmuka berikutnya agar tidak menumpuk perubahan pada CSS lama. Berkas `assets/js/main.js` mengelola navigasi, filter, indikator progres, dan penyalinan checksum.
 
 ## Catatan
 
