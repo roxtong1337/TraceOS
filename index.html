@@ -27,6 +27,7 @@
     </div>
   </div>
   <header class="site-header" id="siteHeader">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <div class="container header-inner">
       <a href="#beranda" class="logo" aria-label="TraceOS, kembali ke beranda">
         <span class="logo__symbol" aria-hidden="true"><img src="assets/img/traceos-cat.webp" alt="" width="66" height="55"></span>
@@ -35,6 +36,7 @@
       <nav class="nav-links" id="siteNav" aria-label="Navigasi utama">
         <a href="#tentang">Tentang</a>
         <a href="#fitur">Fitur</a>
+        <a href="#alur">Alur</a>
         <a href="#tools">Tools</a>
         <a href="#distro">Distro</a>
         <a href="#tim">Tim</a>
@@ -50,6 +52,7 @@
       <div class="hero__orb hero__orb--one" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
+          <div class="hero__edition"><span class="hero__edition-light" aria-hidden="true"></span><span>DIGITAL FORENSICS EDITION</span><span class="hero__edition-separator" aria-hidden="true">/</span><span>XUBUNTU 24.04 LTS</span></div>
           <p class="section-kicker hero__kicker"><span class="kicker-line"></span> TRACEOS / DIGITAL FORENSICS</p>
           <h1 id="hero-heading">The Digital Forensics<br><span class="hero__headline-accent">Linux Distribution.</span></h1>
           <p class="hero__subtitle">Bukti digital memiliki cerita.<br><strong>TraceOS membantu kamu menemukannya.</strong></p>
@@ -63,6 +66,7 @@
             <span><b>DESKTOP</b> XFCE</span>
             <span><b>TOOLS</b> 08 Forensic</span>
           </div>
+          <p class="hero__note"><span class="hero__note-icon" aria-hidden="true">✦</span> A forensic workspace built for curious minds.</p>
         </div>
 
         <div class="hero__visual">
@@ -108,7 +112,7 @@
 
     <section class="metrics" aria-label="TraceOS dalam angka">
       <div class="container metrics__inner">
-        <div class="metric"><span class="metric__value">08<span>+</span></span><span class="metric__caption">TOOLS FORENSIK</span></div>
+        <div class="metric"><span class="metric__value">08</span><span class="metric__caption">TOOLS FORENSIK</span></div>
         <div class="metric"><span class="metric__value">03</span><span class="metric__caption">FITUR UNGGULAN</span></div>
         <div class="metric"><span class="metric__value">24.04</span><span class="metric__caption">XUBUNTU LTS BASE</span></div>
         <div class="metric"><span class="metric__value">04</span><span class="metric__caption">ANGGOTA TIM</span></div>
@@ -182,6 +186,20 @@
             <div class="feature-card__tags"><span>WIRESHARK</span><span>PCAP</span><span>TRAFFIC</span></div>
           </article>
         </div>
+
+        <div class="investigation-flow" id="alur" aria-labelledby="flow-heading">
+          <div class="investigation-flow__intro">
+            <p class="section-kicker">THE TRACEOS WORKFLOW / 01 — 03</p>
+            <h3 id="flow-heading">From digital trace<br><span>to clear findings.</span></h3>
+            <p>Contoh alur investigasi sederhana yang bisa dipelajari dengan tool di TraceOS.</p>
+            <a href="#tools" class="investigation-flow__link">Explore forensic toolkit <span aria-hidden="true">↗</span></a>
+          </div>
+          <ol class="flow-steps">
+            <li class="flow-step"><span class="flow-step__number">01 <span>/ COLLECT</span></span><span class="flow-step__symbol" aria-hidden="true">⌑</span><h4>Kumpulkan bukti</h4><p>Siapkan disk image, PCAP, atau file yang perlu diperiksa.</p></li>
+            <li class="flow-step"><span class="flow-step__number">02 <span>/ ANALYZE</span></span><span class="flow-step__symbol" aria-hidden="true">⌕</span><h4>Telusuri jejak</h4><p>Analisis metadata, filesystem, atau paket jaringan dengan tool yang sesuai.</p></li>
+            <li class="flow-step"><span class="flow-step__number">03 <span>/ DOCUMENT</span></span><span class="flow-step__symbol" aria-hidden="true">✓</span><h4>Catat temuan</h4><p>Rangkum artefak dan hasil analisis secara sistematis.</p></li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -198,6 +216,7 @@
           <button type="button" class="filter-button" data-filter="network" aria-pressed="false">Network</button>
           <button type="button" class="filter-button" data-filter="metadata" aria-pressed="false">Metadata &amp; Binary</button>
         </div>
+        <p class="toolkit__result" id="toolResult" role="status" aria-live="polite">Menampilkan <strong>8</strong> tool forensik dalam semua kategori.</p>
         <div class="tools-grid" id="toolsGrid">
           <article class="tool-card reveal" data-category="analysis"><div class="tool-card__head"><span>01</span><span>ANALYSIS / GUI</span></div><div class="tool-card__glyph tool-card__glyph--brand" title="Ikon aplikasi Autopsy dari repositori pengembang"><img class="tool-official-logo" src="https://raw.githubusercontent.com/sleuthkit/autopsy/develop/icons/icon.ico" alt="Ikon aplikasi Autopsy dari repositori pengembang" width="68" height="68" loading="lazy" decoding="async"></div><h3>Autopsy</h3><p>Platform GUI untuk investigasi disk image, filesystem, dan barang bukti digital.</p><a href="https://www.autopsy.com/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi Autopsy (buka tab baru)">Explore tool ↗</a></article>
           <article class="tool-card reveal" data-category="analysis"><div class="tool-card__head"><span>02</span><span>FILESYSTEM / CLI</span></div><div class="tool-card__glyph tool-card__glyph--cli" title="The Sleuth Kit — toolkit berbasis command line"><span class="tool-cli-mark" role="img" aria-label="The Sleuth Kit — toolkit berbasis command line"><span class="tool-cli-mark__prompt" aria-hidden="true">$_</span>TSK</span></div><h3>The Sleuth Kit</h3><p>Kumpulan utilitas untuk memeriksa partisi, filesystem, dan disk image.</p><a href="https://www.sleuthkit.org/sleuthkit/" target="_blank" rel="noopener noreferrer" aria-label="Dokumentasi The Sleuth Kit (buka tab baru)">Explore tool ↗</a></article>
@@ -246,6 +265,7 @@
           <p class="section-kicker">[ 06 / SEE TRACEOS ]</p>
           <h2 class="section-title" id="showcase-heading">See the system.<br><span class="accent-text">Follow the evidence.</span></h2>
           <p>Tonton <strong>video demonstrasi TraceOS</strong> untuk melihat gambaran distro dan lingkungan forensiknya. Video ditampilkan dari Google Drive.</p>
+          <div class="showcase__meta"><span class="showcase__play-symbol" aria-hidden="true">▶</span><span>VIDEO DEMO</span><span class="showcase__meta-separator">/</span><span>GOOGLE DRIVE</span></div>
           <a href="https://drive.google.com/file/d/1BWGWEy5H0eaR8F1bXqBo-ShHnGyxneP2/view?usp=sharing" class="text-link" target="_blank" rel="noopener noreferrer">Buka video di Google Drive <span aria-hidden="true">↗</span></a>
         </div>
         <div class="showcase__placeholder showcase__video reveal">
@@ -280,13 +300,16 @@
           
           <div class="release__item release__item--checksum"><div><span class="release__item-icon" aria-hidden="true">#</span><div><strong>SHA-256 Checksum</strong><small>Verifikasi integritas file ISO</small></div></div><div class="release__hash-wrap"><code class="release__hash" id="isoSha256">3010ece235b707568c72cf31db02b2c589b2a8e2541e687d7613ba3cc1748f43</code><button class="release__copy-hash" id="copySha256" type="button" aria-label="Salin checksum SHA-256">Salin</button></div></div>
           <p class="release__notice"><span aria-hidden="true">ⓘ</span> Setelah ISO diunduh, hitung SHA-256 file di perangkatmu lalu cocokkan dengan hash di atas. Nilai hash disediakan oleh pembuat TraceOS; belum diverifikasi secara independen.</p>
+          <div class="release__verify-help"><span>VERIFY LOCALLY</span><code>sha256sum nama-file.iso</code></div>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer">
+    <div class="container footer__callout"><div><span>YOUR NEXT INVESTIGATION STARTS HERE</span><strong>Follow the trace.</strong></div><a href="https://drive.google.com/file/d/1PWAlVL4sjZrH3DiTZHpk1JsaAoBozLYM/view?usp=sharing" target="_blank" rel="noopener noreferrer">Get TraceOS <span aria-hidden="true">↗</span></a></div>
     <div class="container footer__top"><div><img class="footer__cat-logo" src="assets/img/traceos-cat.webp" alt="" loading="lazy" width="138" height="116"><a href="#beranda" class="footer__logo">trace<span>OS</span><small> _</small></a><p>Digital Forensics Linux<br>Every trace tells a story.</p></div><div class="footer__links"><div><span>EXPLORE</span><a href="#fitur">Fitur Unggulan</a><a href="#tools">Forensic Toolkit</a><a href="#distro">Tentang Distro</a></div><div><span>PROJECT</span><a href="#tim">Tim Remastering</a><a href="#preview">Preview</a><a href="https://github.com/roxtong1337/TraceOS" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
     <div class="container footer__bottom"><span>© <span id="year">2026</span> TraceOS Team · Universitas Negeri Semarang</span><span>Independent educational remastering project · Not affiliated with Xubuntu or Kali Linux.</span></div>
   </footer>
+  <a href="#beranda" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</a>
 </body>
 </html>
